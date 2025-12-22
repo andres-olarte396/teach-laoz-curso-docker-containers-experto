@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Instrucciones Clave
+# 1. Instrucciones Clave
 
 ## Objetivo
 
@@ -13,6 +13,8 @@ Al finalizar este subtema, serás capaz de:
 ### El Dockerfile es una Receta de Cocina
 
 Un Dockerfile no es código mágico, es una lista de instrucciones paso a paso para crear una imagen. Imagina que estás escribiendo una receta para que un robot cocine por ti.
+
+![Dockerfile Recipe](../../media/m2_dockerfile_recipe.svg)
 
 #### Las Instrucciones Básicas
 
@@ -43,6 +45,19 @@ Un Dockerfile no es código mágico, es una lista de instrucciones paso a paso p
 ### Conceptos Avanzados Simplificados
 
 #### A. RUN vs CMD (¡Crítico!)
+
+```mermaid
+graph TD
+    subgraph "Fase de Construcción (Build Time)"
+        A[Dockerfile] --> B[RUN apt install]
+        B --> C[Imagen Final]
+    end
+    subgraph "Fase de Ejecución (Run Time)"
+        C --> D[Contenedor]
+        D --> E[CMD node server.js]
+    end
+```
+
 *   **RUN**: Pasa en la **Fábrica**. Modifica el disco de la imagen (instala cosas, compila).
 *   **CMD**: Pasa en **Tu Casa**. Ejecuta el proceso principal (enciende el servidor web).
     *   *Regla de oro*: Si quieres instalar algo, usa `RUN`. Si quieres arrancar algo, usa `CMD`.

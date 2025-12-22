@@ -1,4 +1,4 @@
-# Contenido del Subtema 2 – Gestión de Caché
+# 2. Gestión de Caché
 
 ## Objetivo
 
@@ -21,10 +21,10 @@ Docker es extremadamente flojo. Cada vez que le pides construir una imagen, él 
 ### La Analogía del Pastel de Pisos
 
 **Artefacto Visual: El Pastel de Capas en Docker**
-> *Prompt para Generación*: "A 3D educational illustration of a 'Layered Cake' representing a Docker Image. Bottom layer is thick and labeled 'Base OS (Ubuntu/Alpine)'. Middle layers are 'Dependencies/Libs'. Top layer is thin, detachable, labeled 'App Code'. Next to it, a fork labeled 'Container Layer' taking a piece. Soft lighting, appetizing but tech-themed colors, 3D style."
+![Docker Cake Layers](../../media/m2_docker_cake_layers.svg)
 
 Imagina que estás construyendo un pastel:
-1.  Piso 1: El Bizcocho (OS Base).
+1.  Piso 1. El Bizcocho (OS Base).
 2.  Piso 2: El Relleno (Dependencias/Librerías).
 3.  Piso 3: La Decoración (Tu Código Fuente).
 
@@ -54,13 +54,16 @@ RUN npm install
 4.  Resultado: Vuelve a ejecutar `RUN npm install` y descarga 500MB de internet. **Lento**.
 
 
-### Diagrama: Flujo de Build
+### Diagrama: Lógica de la Caché
 
 ```mermaid
-graph LR
-    DF[Dockerfile] -- docker build --> IMG[Imágen (Read only)]
-    IMG -- docker run --> CONT[Contenedor (Read/Write)]
-    CTX[Context .] -. copy . . .-> IMG
+flowchart TD
+    A[Siguiente línea de Dockerfile] --> B{¿Cambió el archivo/comando?}
+    B -- No --> C[Usa Capa de Caché ⚡]
+    C --> A
+    B -- Sí --> D[Ejecuta Instrucción ⏳]
+    D --> E[Invalida Caché de TODO lo que sigue]
+    E --> F[Fin de Caché para este Build]
 ```
 
 ### La Forma Correcta (Cacheo Inteligente)

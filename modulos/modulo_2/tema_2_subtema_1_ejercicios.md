@@ -18,7 +18,7 @@
 
 **Ejercicio 2 – Implementando Multi-stage**
 1. Crea un `Dockerfile.multi` basado en el ejemplo del contenido teórico:
-   - Stage 1: `golang:1.21` (alias `builder`) → compila `main.go`.
+   - Stage 1. `golang:1.21` (alias `builder`) → compila `main.go`.
    - Stage 2: `alpine` → copia el binario.
 2. Construye: `docker build -f Dockerfile.multi -t optimizado .`.
 3. Compara el tamaño con la imagen `monolitico`.

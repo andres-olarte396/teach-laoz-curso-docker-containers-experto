@@ -1,4 +1,4 @@
-# Contenido del Subtema 2 – Contexto de Build
+# 2. Contexto de Build
 
 ## Objetivo
 
@@ -15,6 +15,8 @@ Al finalizar este subtema, serás capaz de:
 Cuando escribes:
 `docker build .`
 
+![Docker Ignore](../../media/m2_docker_ignore.svg)
+
 Docker **NO** empieza a leer tu Dockerfile inmediatamente. Lo primero que hace es una "mudanza":
 
 1.  Toma **TODO** lo que hay en la carpeta actual (`.`).
@@ -27,9 +29,16 @@ Si tienes una carpeta `node_modules` (o `vendor`) que pesa 500MB, o una carpeta 
 
 ---
 
-### La Solución: El archivo `.dockerignore`
-
 Es un archivo de texto simple (muy parecido a `.gitignore`) que le dice al cliente de Docker: "Oye, antes de enviar el paquete de la mudanza, **ignora** estos archivos".
+
+```mermaid
+graph LR
+    A[Archivos Locales] --> B{¿Está en .dockerignore?}
+    B -- Sí --> C[Descartar]
+    B -- No --> D[Empaquetar Contexto]
+    D --> E[Enviar al Daemon]
+    E --> F[Iniciar Build]
+```
 
 #### ¿Qué deberías ignorar SIEMPRE?
 

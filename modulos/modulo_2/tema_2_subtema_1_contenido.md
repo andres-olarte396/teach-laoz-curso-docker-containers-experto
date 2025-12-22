@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Multi‑stage Builds
+# 1. Multi‑stage Builds
 
 ## Objetivo
 
@@ -14,6 +14,8 @@ Al finalizar este subtema, serás capaz de:
 
 Imagina que para enviar a 3 astronautas a la Luna (tu aplicación), envías también todo el cohete gigante de 100 metros, los tanques de combustible vacíos y a los ingenieros que lo construyeron. ¡Es absurdo!
 
+![Multi-stage Builds](../../media/m2_multi_stage.svg)
+
 Tradicionalmente, en Docker pasaba eso:
 1.  Instalabas el compilador de Java (JDK) -> 300MB.
 2.  Instalabas Maven/Gradle -> 100MB.
@@ -28,7 +30,7 @@ Tradicionalmente, en Docker pasaba eso:
 
 Docker permite usar múltiples instrucciones `FROM` en el mismo archivo. Funciona como un cohete espacial:
 
-**Etapa 1: El Constructor (El Cohete Impulsor)**
+**Etapa 1. El Constructor (El Cohete Impulsor)**
 *   Usa una imagen base pesada y completa (`golang`, `node`, `maven`).
 *   Compila el código.
 *   Genera el ejecutable (el artefacto).
@@ -41,10 +43,23 @@ Docker permite usar múltiples instrucciones `FROM` en el mismo archivo. Funcion
 
 ### Anatomía de un Dockerfile Multi-stage
 
+```mermaid
+graph TD
+    subgraph "Etapa Builder (Alias: builder)"
+        A[FROM golang] --> B[COPY . .]
+        B --> C[RUN go build]
+    end
+    subgraph "Etapa Final"
+        D[FROM alpine] --> E[COPY --from=builder]
+        E --> F[CMD ./app]
+    end
+    C -. solo el binario .-> E
+```
+
 Veamos un ejemplo real con el lenguaje Go (famoso por generar binarios pequeños):
 
 ```dockerfile
-# --- ETAPA 1: EL SUCIO ---
+# --- ETAPA 1. EL SUCIO ---
 # Le ponemos un alias "builder" para llamarlo después
 FROM golang:1.21 AS builder
 

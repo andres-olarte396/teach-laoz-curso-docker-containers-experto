@@ -42,5 +42,5 @@ Dominar la creación de imágenes Docker optimizadas, seguras y ligeras mediante
 
 ## 🔗 Referencias Cruzadas
 
-- **Prerequisito**: [Módulo 1: Fundamentos](../modulo_1/00_PRESENTACION.md)
+- **Prerequisito**: [Módulo 1. Fundamentos](../modulo_1/00_PRESENTACION.md)
 - **Siguiente Paso**: [Módulo 3: Networking y Persistencia](../modulo_3/00_PRESENTACION.md)
