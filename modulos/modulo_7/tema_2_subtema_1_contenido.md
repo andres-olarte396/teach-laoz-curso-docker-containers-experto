@@ -1,12 +1,12 @@
-# Contenido del Subtema 1 – Deployments y ReplicaSets
+# 1. Deployments y ReplicaSets
 
 ## Objetivo
 
 Al finalizar este subtema, serás capaz de:
 
-1.  Hacer que tu aplicación sea **Inmortal** (Self-healing).
-2.  Entender la jerarquía de mando en Kubernetes.
-3.  Usar las etiquetas (Labels) como pegamento mágico.
+1. Hacer que tu aplicación sea **Inmortal** (Self-healing).
+2. Entender la jerarquía de mando en Kubernetes.
+3. Usar las etiquetas (Labels) como pegamento mágico.
 
 ## Contenido Teórico
 
@@ -14,6 +14,8 @@ Al finalizar este subtema, serás capaz de:
 
 Si lanzas un Pod manual (`kubectl run`), es un **Pod Huérfano**.
 Si el nodo donde vive se incendia, el Pod muere. Nadie lo llora. Nadie lo reemplaza. Tu web se cae.
+
+![Self Healing](../../media/m7_k8s_deployments.svg)
 
 Para evitar esto, usamos un sistema de gestión en capas.
 

@@ -1,30 +1,31 @@
-# Contenido del Subtema 1 – Pods y Nodos
+# 1. Pods y Nodos
 
 ## Objetivo
 
 Al finalizar este subtema, serás capaz de:
 
-1.  Navegar el mapa mental de Kubernetes sin perderte.
-2.  Entender por qué Kubernetes envuelve los contenedores en **Pods**.
-3.  Lanzar tu primera carga de trabajo en el clúster.
+1. Navegar el mapa mental de Kubernetes sin perderte.
+2. Entender por qué Kubernetes envuelve los contenedores en **Pods**.
+3. Lanzar tu primera carga de trabajo en el clúster.
 
 ## Contenido Teórico
 
 ### Bienvenido a la Flota (Analogía Naval)
 
 **Artefacto Visual: El Barco de Carga y los Camarotes**
-
-> _Prompt para Generación_: "Illustration of a huge Cargo Ship labeled 'Worker Node' sailing on a digital sea. On deck, instead of containers, there are small cabins or rooms labeled 'Pods'. Inside one cut-away Pod, you can see a passenger labeled 'Container'. In the sky, a futuristic drone or airship labeled 'Control Plane' is beaming instructions to the ship's captain (Kubelet). K8s logo style colors (blue/white)."
+![K8s Cargo Ship Pods](../../media/m7_k8s_cargo_ship_pods.svg)
 
 La palabra _Kubernetes_ viene del griego y significa "Timonel" (el que maneja el barco). Todo aquí tiene temática naval.
 
-1.  **El Clúster (La Flota)**: Es todo el conjunto de máquinas.
-2.  **Control Plane (El Barco Almirante)**:
-    - Aquí viajan los oficiales. No llevan carga. Solo toman decisiones.
-    - Ellos deciden "A qué barco va esta caja".
-3.  **Worker Node (El Carguero)**:
-    - Son barcos grandes y tontos. Solo cargan cajas.
-    - Tienen un capataz a bordo llamado **Kubelet** que recibe órdenes del Almirante.
+1. **El Clúster (La Flota)**: Es todo el conjunto de máquinas.
+
+2. **Control Plane (El Barco Almirante)**:
+   - Aquí viajan los oficiales. No llevan carga. Solo toman decisiones.
+   - Ellos deciden "A qué barco va esta caja".
+
+3. **Worker Node (El Carguero)**:
+   - Son barcos grandes y tontos. Solo cargan cajas.
+   - Tienen un capataz a bordo llamado **Kubelet** que recibe órdenes del Almirante.
 
 ### La Unidad Mínima: El Pod
 

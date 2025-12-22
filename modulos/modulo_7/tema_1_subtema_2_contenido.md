@@ -1,12 +1,12 @@
-# Contenido del Subtema 2 – Manifiestos YAML
+# 2. Manifiestos YAML
 
 ## Objetivo
 
 Al finalizar este subtema, serás capaz de:
 
-1.  Escribir "Cartas a Kubernetes" (Archivos YAML).
-2.  Entender los 4 campos obligatorios que todo objeto tiene.
-3.  Usar el comando más importante de tu carrera: `kubectl apply`.
+1. Escribir "Cartas a Kubernetes" (Archivos YAML).
+2. Entender los 4 campos obligatorios que todo objeto tiene.
+3. Usar el comando más importante de tu carrera: `kubectl apply`.
 
 ## Contenido Teórico
 
@@ -16,25 +16,26 @@ Al finalizar este subtema, serás capaz de:
     *"Kubernetes, descarga la imagen. Ahora crea el contenedor. Ahora abre el puerto. Ahora..."*
     Es cansado y si te saltas un paso, todo falla.
 
-*   **Método Nuevo (Declarativo)**: Es como escribir una **Carta a Santa Claus**.
-    *"Querido Kubernetes: Deseo que exista un Pod llamado 'mi-web' con la imagen Nginx"*.
-    Tú describes el **Resultado Final**. Kubernetes se rompe la cabeza pensando cómo lograrlo.
-
 Si quieres cambiar algo, simplemente editas la carta y se la vuelves a mandar.
+
+![Kubernetes Manifests](../../media/m7_k8s_manifests.svg)
 
 ### Anatomía de un YAML (La Regla AKMS)
 
 Esos archivos largos que ves en internet siempre tienen la misma estructura. Memoriza **AKMS**:
 
-1.  **A**piVersion: La versión del formulario (como un formulario de gobierno).
-    *   Pods usan `v1`. Deployments usan `apps/v1`.
-2.  **K**ind: ¿Qué tipo de criatura es?
-    *   `Pod`, `Service`, `Deployment`, `ConfigMap`.
-3.  **M**etadata: Etiquetas para identificarlo.
-    *   `name`: Su DNI único.
-    *   `labels`: Post-its para organizarlos (`app: frontend`).
-4.  **S**pec: La Hoja de Especificaciones.
-    *   Aquí es donde dices "Quiero la imagen X", "Quiero el puerto Y".
+1. **ApiVersion**: La versión del formulario (como un formulario de gobierno).
+   - Pods usan `v1`. Deployments usan `apps/v1`.
+
+2. **Kind**: ¿Qué tipo de criatura es?
+   - `Pod`, `Service`, `Deployment`, `ConfigMap`.
+
+3. **Metadata**: Etiquetas para identificarlo.
+   - `name`: Su DNI único.
+   - `labels`: Post-its para organizarlos (`app: frontend`).
+
+4. **Spec**: La Hoja de Especificaciones.
+   - Aquí es donde dices "Quiero la imagen X", "Quiero el puerto Y".
 
 **Ejemplo Real**:
 ```yaml
@@ -59,13 +60,25 @@ spec:
 En Docker usábamos `run`, `build`, `create`...
 En Kubernetes, el 99% del tiempo usarás SOLO un comando:
 
-```bash
-kubectl apply -f archivo.yaml
-```
-
-*   **Si el objeto no existe**: Lo crea.
-*   **Si el objeto ya existe pero cambiaste algo en el YAML**: Kubernetes detecta la diferencia y lo actualiza (es muy inteligente).
 *   **Si nada cambió**: No hace nada.
+
+```mermaid
+graph TD
+    YAML[Archivo YAML] -->|kubectl apply| API[K8s API Server]
+    API -->|Guarda| ETCD[(BD etcd)]
+    API -->|Aclara| SCHED[Scheduler]
+    SCHED -->|Decide Nodo| POD[Crea Pod]
+
+    subgraph AKMS[Anatomía del YAML]
+        A[ApiVersion]
+        K[Kind]
+        M[Metadata]
+        S[Spec]
+    end
+    
+    style YAML fill:#f1f2f6
+    style AKMS fill:#fff3e0
+```
 
 ## Paso a Paso práctico
 
