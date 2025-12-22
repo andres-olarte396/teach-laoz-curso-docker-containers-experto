@@ -1,4 +1,4 @@
-# Contenido del Subtema 2 – Backups y Migración
+# 2. Backups y Migración
 
 ## Objetivo
 
@@ -16,6 +16,8 @@ Los volúmenes están protegidos en rutas del sistema (`/var/lib/docker/...`) qu
 Entonces, ¿cómo sacamos los datos para guardarlos en un USB o subirlos a la nube?
 
 Respuesta: **Usamos otro contenedor como "Mula de Carga"**.
+
+![Docker Backup](../../media/m3_docker_backup.svg)
 
 ---
 
@@ -53,6 +55,14 @@ Una vez que tienes el archivo `backup.tar.gz`, moverlo es trivial.
 1.  **En Servidor A**: Haces el backup (como vimos arriba). Tienes `backup.tar.gz`.
 2.  **Transferencia**: Usas `scp`, FTP, o un pendrive para llevar el archivo al Servidor B.
 3.  **En Servidor B**: Haces el proceso inverso (Restauración).
+
+```mermaid
+graph LR
+    A[Servidor A] -- "tar czf" --> B[backup.tar.gz]
+    B -- "scp / ftp" --> C[Servidor B]
+    C -- "tar xzf" --> D[Volumen Nuevo]
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+```
 
 **Comando de Restauración**:
 ```bash

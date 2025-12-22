@@ -14,6 +14,9 @@ Al finalizar este subtema, serás capaz de:
 
 Hasta ahora, usamos redes `NAT` (Bridge). Tus contenedores están ocultos detrás de la IP de tu servidor.
 Pero, ¿qué pasa si tienes una aplicación vieja que exige tener su propia dirección IP en la red de la oficina (ej. `192.168.1.50`)?
+
+![Macvlan Impostor](../../media/m3_macvlan_impostor.svg)
+
 Aquí entran los drivers avanzados.
 
 ### 1️⃣ macvlan: El Impostor Perfecto
@@ -31,6 +34,25 @@ Es una versión moderna y ligera de macvlan.
 *   **Modo L2 (Capa 2)**: Todos los contenedores comparten la misma dirección MAC del Host, pero tienen IPs distintas.
     *   *¿Para qué sirve?*: Algunos switches de oficina bloquean el puerto si ven muchas MAC addresses distintas saliendo del mismo cable. IPvlan L2 engaña al switch.
 *   **Modo L3 (Capa 3)**: Funciona como un Router. Sin broadcast. Para redes gigantescas.
+
+```mermaid
+graph TD
+    subgraph LAN["Red Física"]
+        S[Switch]
+    end
+    subgraph Host["Host Linux"]
+        eth0[Tarjeta Física]
+        subgraph MACVLAN["Macvlan"]
+            C1[Contenedor 1 - MAC: A]
+            C2[Contenedor 2 - MAC: B]
+        end
+    end
+    S --- eth0
+    eth0 --- C1
+    eth0 --- C2
+    style C1 fill:#f9f,stroke:#333,stroke-width:2px
+    style C2 fill:#f9f,stroke:#333,stroke-width:2px
+```
 
 ### 3️⃣ Comparativa Rápida
 

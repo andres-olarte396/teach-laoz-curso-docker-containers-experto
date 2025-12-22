@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Tipos de Monturas
+# 1. Tipos de Monturas
 
 ## Objetivo
 
@@ -23,7 +23,7 @@ Para arreglar esto, usamos **Monturas (Mounts)**.
 ### Opción A: Volumes (La Caja Fuerte) - *Para Producción*
 
 **Artefacto Visual: Volumen vs Bind Mount**
-> *Prompt para Generación*: "Visual metaphor for Docker Storage. Left side 'Volume': A secure, heavy steel safe box labeled 'Docker Managed' connected to a container via a pristine pipe. Right side 'Bind Mount': An open magic portal window showing files on a messy computer desktop, indicating direct access to host files. Flat vector design, clean lines, educational style."
+![Volumes vs Bind Mounts](../../media/m3_volumes_vs_bind_mounts.svg)
 
 Le dices a Docker: *"Necesito guardar estos archivos, no me importa dónde, pero que no se pierdan"*.
 Docker crea una carpeta en una zona protegida de tu disco duro (gestionada por él) y la conecta al contenedor.
@@ -58,6 +58,17 @@ Los datos se guardan en la RAM de tu computadora.
 *   **Uso**: Datos ultra-secretos (claves) o ultra-rápidos que NO quieres que toquen el disco duro nunca. Si apagas la PC, se esfuman.
 
 ---
+
+### ¿Cuál elegir? (Diagrama de Decisión)
+
+```mermaid
+flowchart TD
+    A[¿Qué tipo de datos son?] --> B{¿Es código vivo?}
+    B -- Sí (Desarrollo) --> C[Bind Mount]
+    B -- No --> D{¿Datos de App?}
+    D -- Sí (BD, Logs) --> E[Named Volume]
+    D -- No (Secretos RAM) --> F[tmpfs Mount]
+```
 
 ## Tabla de Decisión Rápida
 

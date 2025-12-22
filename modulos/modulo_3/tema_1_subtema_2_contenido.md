@@ -1,4 +1,4 @@
-# Contenido del Subtema 2 – DNS y Descubrimiento de Servicios
+# 2. DNS y Descubrimiento de Servicios
 
 ## Objetivo
 
@@ -15,9 +15,9 @@ Al finalizar este subtema, serás capaz de:
 Los contenedores son efímeros. Si reinicias una base de datos, es muy probable que reviva con una dirección IP diferente (hoy es `172.18.0.2`, mañana `172.18.0.5`).
 Si configuras tu aplicación para conectarse a una IP fija, se romperá constantemente.
 
-### La Solución: Docker DNS (La Agenda Telefónica)
-
 Docker tiene un servidor DNS interno (una agenda de contactos) integrada. Funciona así:
+
+![Docker DNS](../../media/m3_docker_dns.svg)
 
 1.  Creas un contenedor y le pones nombre: `docker run --name mi-base-datos ...`
 2.  Docker anota en su agenda: "El nombre `mi-base-datos` corresponde a la IP `172.X.X.X`".
@@ -39,6 +39,19 @@ Para tener DNS, **siempre** debes crear tu propia red.
 ---
 
 ### Service Discovery en Swarm (Nivel Avanzado)
+
+```mermaid
+sequenceDiagram
+    participant C1 as Container A
+    participant DNS as Docker DNS
+    participant C2 as Container B (IP variable)
+    
+    Note over C1, C2: En red personalizada
+    C1->>DNS: ¿Dónde está "ContainerB"?
+    DNS->>DNS: Consulta Agenda
+    DNS-->>C1. Está en 172.18.0.3
+    C1->>C2: Conexión a 172.18.0.3 (vía nombre)
+```
 
 Cuando usas Docker Swarm (clúster de varios servidores), esto se vuelve aún más poderoso.
 Si tienes 3 réplicas de una web (`web-1`, `web-2`, `web-3`), Docker crea un solo nombre `web`. Cuando alguien llama a `web`, Docker hace de operador telefónico y pasa la llamada a cualquiera de las 3 réplicas disponible (Balanceo de Carga).

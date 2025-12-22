@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Drivers de Red
+# 1. Drivers de Red
 
 ## Objetivo
 
@@ -13,14 +13,14 @@ Al finalizar este subtema, serás capaz de:
 
 ### La Analogía de la Casa
 
-**Diagrama de Arquitectura de Redes**
+![Network Drivers](../../media/m3_network_drivers.svg)
 ```mermaid
 graph TD
     subgraph Host["Computadora (Host IP: 192.168.1.10)"]
         eth0[Tarjeta de Red]
         
         subgraph BridgeNet["Red Bridge (172.17.0.0/16)"]
-            C1["C1: App (172.17.0.2)"]
+            C1["C1. App (172.17.0.2)"]
             C2["C2: DB (172.17.0.3)"]
         end
         
