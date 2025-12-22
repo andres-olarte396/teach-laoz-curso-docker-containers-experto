@@ -1,4 +1,4 @@
-# Contenido del Subtema 2 – Dependencias y Healthchecks
+# 2. Dependencias y Healthchecks
 
 ## Objetivo
 
@@ -32,9 +32,9 @@ Esto le dice a Docker: "Arranca el contenedor `db` primero. Un milisegundo despu
 
 ---
 
-### La Solución Real: Healthchecks (El Chequeo Médico)
-
 Un **Healthcheck** es una pregunta que Docker le hace al contenedor cada cierto tiempo: *"¿Estás listo?"*.
+
+![Docker Healthcheck](../../media/m4_docker_healthcheck.svg)
 
 *   **Estado: Starting**: Me estoy despertando.
 *   **Estado: Healthy**: ¡Listo! Ya me tomé el café.

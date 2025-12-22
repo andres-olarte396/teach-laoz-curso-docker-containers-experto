@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Development vs Production
+# 1. Development vs Production
 
 ## Objetivo
 
@@ -30,7 +30,9 @@ En **Producción (El Servidor)** quieres:
 
 Docker Compose permite sumar archivos. Piensa en esto como vestirse.
 1.  **Archivo Base**: El cuerpo humano (Lo que es igual en todos lados).
-2.  **Archivo Override**: La ropa que te pones según la ocasión.
+23.  **Archivo Override**: La ropa que te pones según la ocasión.
+
+![Compose Overrides](../../media/m4_compose_overrides.svg)
 
 #### 1. El Cuerpo (`docker-compose.yml`)
 Aquí pones lo que NUNCA cambia: El nombre de los servicios y las imágenes base.
@@ -87,6 +89,15 @@ Solo escribe: `docker compose up`.
 Tienes que decirle explícitamente qué ponerse:
 `docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d`
 *   Docker toma base + prod. (Ignora el override/pijama).
+
+```mermaid
+graph TD
+    BASE[docker-compose.yml] --> MERGE{Merge / Fusión}
+    OV[docker-compose.override.yml] -->|Automático en Dev| MERGE
+    PROD[docker-compose.prod.yml] -->|Vía -f en Prod| MERGE
+    MERGE --> FINAL[Configuración Final Resultante]
+    style MERGE fill:#fcf,stroke:#333...
+```
 
 ## El Truco del Mago: `docker compose config`
 

@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Docker Compose YAML
+# 1. Docker Compose YAML
 
 ## Objetivo
 
@@ -24,16 +24,26 @@ Si haces esto con `docker run`, tendrás que escribir 4 comandos gigantes y prop
 ### La Solución: El Director de Orquesta (Docker Compose)
 
 **Artefacto Visual: El Director de Orquesta**
-> *Prompt para Generación*: "A vector illustration of a conductor (Director de Orquesta) holding a baton labeled 'Docker Compose'. Before him, instead of musicians, there are different floating cubes representing 'Database', 'Frontend', 'Backend'. He is reading a music sheet labeled 'docker-compose.yml'. Minimalist, elegant style, dark blue background."
+![Docker Compose Conductor](../../media/m4_docker_compose_conductor.svg)
 
 **Docker Compose** es una herramienta que lee una *partitura* (un archivo YAML) y dirige a todos los músicos (contenedores) para que toquen juntos.
 
 *   No más comandos imperativos ("haz esto, luego esto").
 *   Ahora es **Declarativo**: "Quiero que exista un sistema con estas características. Docker, haz que suceda".
 
-### La Partitura: `docker-compose.yml`
-
 Es un archivo de texto donde traduces tus comandos `docker run`.
+
+```mermaid
+graph TD
+    YAML[docker-compose.yml] --> SERVICES[services:]
+    SERVICES --> APP[app:]
+    SERVICES --> DB[db:]
+    APP --> IMG1[image: node]
+    APP --> PORT[ports: 80:80]
+    DB --> IMG2[image: mysql]
+    DB --> ENV[environment:]
+    style YAML fill:#f9f,stroke:#333,stroke-width:2px
+```
 
 **Estructura Clave**:
 ```yaml

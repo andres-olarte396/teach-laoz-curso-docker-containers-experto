@@ -1,4 +1,4 @@
-# Contenido del Subtema 2 – Variables de Entorno
+# 2. Variables de Entorno
 
 ## Objetivo
 
@@ -18,13 +18,15 @@ Resulta que subes ese archivo a GitHub público.
 
 Para evitar esto, usamos **Variables de Entorno**. Son valores que viven *fuera* del código.
 
+![Environment Variables](../../media/m4_env_vars.svg)
+
 ---
 
 ### Los Dos Momentos de las Variables
 
 Esto confunde a todos. Hay dos lugares donde puedes usar variables:
 
-#### Momento 1: Configurando a Docker (Interpolación)
+#### Momento 1. Configurando a Docker (Interpolación)
 Esto sucede **ANTES** de que Docker arranque nada. Docker lee tu archivo YAML y rellena los huecos `${...}` con lo que encuentre en el archivo `.env`.
 
 *   **Archivo `.env`**:
@@ -71,6 +73,17 @@ Esto es para pasarle datos a tu código (Node.js, Python, PHP) para que los lea 
         env_file:
           - .env.production
     ```
+
+### Flujo de Datos
+
+```mermaid
+graph LR
+    ENV[.env File] -->|Interpolación| YAML[docker-compose.yml]
+    ENV -->|Injection| CONT[Contenedor / Runtime]
+    YAML -->|Inicia| CONT
+    style ENV fill:#dfd
+    style CONT fill:#ddf
+```
 
 ---
 
