@@ -2,7 +2,7 @@
 
 ## Nivel Básico (60-74%)
 
-### Ejercicio 1: Comparación Directa
+### Ejercicio 1. Comparación Directa
 **Enunciado**: Completa la siguiente tabla indicando si la característica corresponde a una Máquina Virtual (VM) o a un Contenedor.
 
 | Característica | ¿VM o Contenedor? |

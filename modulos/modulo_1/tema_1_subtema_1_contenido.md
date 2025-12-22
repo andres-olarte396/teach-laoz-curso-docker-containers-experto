@@ -5,8 +5,8 @@
 Este subtema aborda la diferencia fundamental entre Máquinas Virtuales (VMs) y Contenedores. Entender esto es crucial para justificar por qué Docker ha revolucionado la industria.
 
 Para empezar, usemos una **analogía clave**:
-*   **Máquinas Virtuales (VMs)**: Son como **casas independientes**. Cada una tiene sus propios cimientos, tuberías, sistema eléctrico y paredes gruesas. Son muy privadas (aisladas), pero ocupan mucho espacio y construir cada una es costoso y lento.
-*   **Contenedores**: Son como **apartamentos en un rascacielos**. Todos comparten los mismos cimientos, la misma entrada de agua y luz (el Sistema Operativo del Host), pero cada uno es un espacio privado para vivir. Son rápidos de construir, baratos y ocupan menos espacio.
+* **Máquinas Virtuales (VMs)**: Son como **casas independientes**. Cada una tiene sus propios cimientos, tuberías, sistema eléctrico y paredes gruesas. Son muy privadas (aisladas), pero ocupan mucho espacio y construir cada una es costoso y lento.
+* **Contenedores**: Son como **apartamentos en un rascacielos**. Todos comparten los mismos cimientos, la misma entrada de agua y luz (el Sistema Operativo del Host), pero cada uno es un espacio privado para vivir. Son rápidos de construir, baratos y ocupan menos espacio.
 
 ## Objetivos de Aprendizaje
 
@@ -37,7 +37,23 @@ Antes de Docker, la forma estándar de aislar aplicaciones era usar **Máquinas 
 ### 2. La Revolución de los Contenedores
 
 **Artefacto Visual: Comparación VM vs Contenedor**
-> *Prompt para Generación*: "A split 3D infographic illustration comparison. Left side labeled 'Virtual Machines': Separate detached houses, each with its own heavy foundation and roof, representing isolation and heavy resources. Right side labeled 'Containers': A modern high-rise glass apartment building sharing a single strong foundation, representing efficiency and shared kernel. Clean aesthetic, isometric view, tech colors (blue, white, cyan), high quality render."
+![VM vs Container](../../media/m1_vms_vs_containers.svg)
+
+### Comparación de Arquitectura
+
+```mermaid
+graph TD
+    subgraph "Máquina Virtual"
+        A1[App] --> B1[Guest OS]
+        B1 --> C1[Hypervisor]
+        C1 --> D1[Hardware Host]
+    end
+    subgraph "Contenedor"
+        A2[App] --> B2[Docker Engine]
+        B2 --> C2[Host OS]
+        C2 --> D2[Hardware Host]
+    end
+```
 
 Los contenedores proponen un modelo diferente: **Virtualización a nivel de Sistema Operativo**.
 

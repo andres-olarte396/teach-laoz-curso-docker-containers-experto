@@ -1,4 +1,4 @@
-# Contenido del Subtema 2 – Ciclo de vida básico
+# 2. Ciclo de vida básico
 
 ## Objetivo
 
@@ -11,6 +11,8 @@ Al finalizar este subtema, serás capaz de:
 ## Contenido Teórico
 
 Imagina que un contenedor es como un **Reproductor de Música** (o un servicio de streaming).
+
+![Docker Lifecycle](../../media/m1_docker_lifecycle.svg)
 
 ### 1️⃣ Los Estados del Ciclo de Vida
 

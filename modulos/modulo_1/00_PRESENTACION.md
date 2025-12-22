@@ -1,4 +1,4 @@
-# Presentación del Módulo 1: Fundamentos de la Containerización
+# Presentación del Módulo 1. Fundamentos de la Containerización
 
 ## 🎯 Objetivo General
 

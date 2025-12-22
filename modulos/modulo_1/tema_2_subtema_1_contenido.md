@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Instalación y Hola Mundo
+# 1. Instalación y Hola Mundo
 
 ## Objetivo
 
@@ -13,6 +13,8 @@ Al finalizar este subtema, serás capaz de:
 ### 1️⃣ Instalación: Elige tu camino
 
 La instalación varía según tu sistema, pero el resultado es el mismo: tendrás el comando `docker` disponible.
+
+![Docker Platforms](../../media/m1_docker_platforms.svg)
 
 #### Opción A: Windows y Mac (Docker Desktop)
 La forma más fácil. Es una aplicación gráfica que instala todo por ti (Cliente, Daemon, Linux virtual).
@@ -53,7 +55,19 @@ sudo usermod -aG docker $USER
 
 ### 3️⃣ Tu primer contenedor: `hello-world`
 
-El rito de iniciación. Ejecuta:
+El rito de iniciación.
+
+```mermaid
+graph LR
+    A[docker run] --> B{¿Imagen local?}
+    B -- No --> C[Descargar de Docker Hub]
+    C --> D[Crear Contenedor]
+    B -- Sí --> D
+    D --> E[Ejecutar App]
+    E --> F[Fin / Apagar]
+```
+
+Ejecuta:
 ```bash
 docker run hello-world
 ```

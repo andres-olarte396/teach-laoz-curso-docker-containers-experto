@@ -12,6 +12,8 @@ Al finalizar este subtema, serás capaz de:
 
 Docker funciona con una arquitectura **Cliente-Servidor**. Para entenderlo, usemos la analogía de un **Restaurante**.
 
+![Docker Restaurant](../../media/m1_docker_restaurant.svg)
+
 ### 1. Docker Client (`docker`) - "El Mesero"
 *   **¿Qué es?**: Es la herramienta que usas en tu terminal (`docker build`, `docker run`).
 *   **Analogía**: Es como el mesero. Tú le dices lo que quieres ("Tráeme un Nginx"), y él anota la orden y se la lleva a la cocina.
@@ -31,6 +33,25 @@ Docker funciona con una arquitectura **Cliente-Servidor**. Para entenderlo, usem
 ### Flujo de Trabajo: ¿Qué pasa cuando ejecutas un comando?
 
 Veamos la película completa cuando escribes `docker run nginx`:
+
+```mermaid
+sequenceDiagram
+    participant U as Usuario
+    participant C as Docker Client
+    participant D as Docker Daemon
+    participant R as Docker Registry
+
+    U->>C: ejecuta 'docker run nginx'
+    C->>D: envía orden via API
+    Note over D: ¿Tengo la imagen local?
+    alt No está en caché
+        D->>R: solicita imagen (pull)
+        R-->>D: envía capas de imagen
+    end
+    D->>D: instancia contenedor
+    D-->>C: reporte de éxito
+    C-->>U: Contenedor listo
+```
 
 1.  **Tú (Usuario)**: Escribes `docker run nginx` en la terminal.
 2.  **Cliente (Mesero)**: Toma el comando, lo traduce a una petición API y se lo envía al Daemon.
