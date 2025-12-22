@@ -49,9 +49,9 @@ stateDiagram-v2
 
 ```mermaid
 graph LR
-    DF[Dockerfile] -- docker build --> IMG[Image (Read Only)]
-    IMG -- docker run --> CONT[Container (Read/Write)]
-    CTX[Context .] -. copy . . .-> IMG
+    DF[Dockerfile] -- docker build --> IMG[Image <Read Only>]
+    IMG -- docker run --> CONT[Container <Read/Write>]
+    CTX[Context .] -. copy ...-> IMG
 ```
 
 ---
@@ -69,10 +69,10 @@ graph LR
 
 ```mermaid
 graph TD
-    subgraph Host[Servidor Físico (IP Pública)]
+    subgraph Host[Servidor Físico <IP Pública>]
         eth0[Tarjeta Red Real]
         
-        subgraph BridgeNet[Red Bridge (Aislada)]
+        subgraph BridgeNet[Red Bridge <Aislada>]
             C1[Contenedor 1]
             C2[Contenedor 2]
         end
@@ -127,7 +127,7 @@ sequenceDiagram
 
 ```mermaid
 graph TB
-    subgraph Manager[Nodo Manager (Cerebro)]
+    subgraph Manager[Nodo Manager <Cerebro>]
         API[API Server]
         Raft[Base de Datos Raft]
         Sched[Scheduler]
@@ -161,12 +161,12 @@ graph TB
 
 ```mermaid
 graph TD
-    D[Deployment (Gerente)] -->|Gestiona| RS[ReplicaSet (Supervisor)]
+    D[Deployment <Gerente>] -->|Gestiona| RS[ReplicaSet <Supervisor>]
     RS -->|Crea/Destruye| P1[Pod 1]
     RS --> P2[Pod 2]
     RS --> P3[Pod 3]
     
-    S[Service (Recepcionista)] -.->|Selector: app=web| P1
+    S[Service <Recepcionista>] -.->|Selector: app=web| P1
     S -.-> P2
     S -.-> P3
     
