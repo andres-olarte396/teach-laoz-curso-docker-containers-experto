@@ -1,0 +1,39 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#f5f6fa"/>
+  
+  <text x="400" y="40" font-family="Arial" font-size="28" font-weight="bold" fill="#2f3640" text-anchor="middle">Principio de Menor Privilegio</text>
+
+  <!-- Scenario 1. Root (The King) -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="280" height="250" fill="#eb4d4b" rx="10" opacity="0.1"/>
+    <text x="140" y="30" font-family="Arial" font-size="16" font-weight="bold" fill="#eb4d4b" text-anchor="middle">MODO INSEGURO (Root)</text>
+    
+    <!-- King icon -->
+    <text x="140" y="120" font-size="60" text-anchor="middle">👑</text>
+    <text x="140" y="160" font-family="Arial" font-size="14" fill="#636e72" text-anchor="middle">Puede borrar todo el sistema</text>
+    <text x="140" y="180" font-family="Arial" font-size="14" fill="#636e72" text-anchor="middle">Puede instalar malware</text>
+    
+    <rect x="70" y="200" width="140" height="30" fill="#eb4d4b" rx="5"/>
+    <text x="140" y="220" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">PELIGRO: HACKER = ROOT</text>
+  </g>
+
+  <!-- Scenario 2: User (The Baker) -->
+  <g transform="translate(420, 100)">
+    <rect x="0" y="0" width="280" height="250" fill="#2ecc71" rx="10" opacity="0.1"/>
+    <text x="140" y="30" font-family="Arial" font-size="16" font-weight="bold" fill="#2ecc71" text-anchor="middle">MODO SEGURO (Non-Root)</text>
+    
+    <!-- Baker/Plebeyo icon -->
+    <text x="140" y="120" font-size="60" text-anchor="middle">👨‍🍳</text>
+    <text x="140" y="160" font-family="Arial" font-size="14" fill="#636e72" text-anchor="middle">Solo lee/escribe su carpeta</text>
+    <text x="140" y="180" font-family="Arial" font-size="14" fill="#636e72" text-anchor="middle">No puede instalar programas</text>
+    
+    <rect x="70" y="200" width="140" height="30" fill="#2ecc71" rx="5"/>
+    <text x="140" y="220" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">EXITO: ACCESO DENEGADO</text>
+  </g>
+
+  <!-- The Barrier -->
+  <line x1="400" y1="80" x2="400" y2="350" stroke="#dcdde1" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <text x="400" y="400" font-family="Arial" font-size="16" fill="#2f3640" text-anchor="middle" font-weight="bold">"No le des las llaves del reino a tu aplicación web"</text>
+</svg>

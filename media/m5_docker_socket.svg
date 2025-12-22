@@ -1,0 +1,40 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#2d3436"/>
+  
+  <text x="400" y="40" font-family="Arial" font-size="28" font-weight="bold" fill="#fab1a0" text-anchor="middle">El Peligro del Docker Socket</text>
+
+  <!-- The Magic Wand (docker.sock) -->
+  <g transform="translate(400, 200)">
+    <!-- Wand/Gauntlet abstraction -->
+    <rect x="-10" y="-80" width="20" height="160" fill="#fdcb6e" rx="5"/>
+    <circle cx="0" cy="-60" r="10" fill="#d63031">
+      <animate attributeName="opacity" values="1;0.5;1" dur="0.8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="12" fill="#0984e3">
+      <animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="60" r="10" fill="#00b894">
+      <animate attributeName="opacity" values="1;0.5;1" dur="1.2s" repeatCount="indefinite" />
+    </circle>
+    
+    <text x="0" y="110" font-family="Arial" font-size="24" font-weight="bold" fill="white" text-anchor="middle">docker.sock</text>
+  </g>
+
+  <!-- The Hands -->
+  <!-- Left: Admin -->
+  <g transform="translate(150, 200)">
+    <path d="M -50 40 Q 0 0 50 40" stroke="#00b894" stroke-width="4" fill="none"/>
+    <text x="0" y="80" font-family="Arial" font-size="16" fill="#00b894" text-anchor="middle" font-weight="bold">Administrador</text>
+  </g>
+
+  <!-- Right: Hacker/Container -->
+  <g transform="translate(650, 200)">
+    <path d="M 50 40 Q 0 0 -50 40" stroke="#d63031" stroke-width="4" fill="none"/>
+    <text x="0" y="80" font-family="Arial" font-size="16" fill="#d63031" text-anchor="middle" font-weight="bold">Hacker / Malware</text>
+  </g>
+
+  <!-- Warning Label -->
+  <rect x="250" y="340" width="300" height="50" fill="#d63031" rx="5"/>
+  <text x="400" y="375" font-family="Arial" font-size="18" fill="white" text-anchor="middle" font-weight="bold">¡PODER TOTAL SOBRE EL HOST!</text>
+</svg>

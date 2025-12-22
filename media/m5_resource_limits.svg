@@ -1,0 +1,43 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#f1f2f6"/>
+  
+  <text x="400" y="40" font-family="Arial" font-size="28" font-weight="bold" fill="#2f3542" text-anchor="middle">Límites: El OOM Killer en el Buffet</text>
+
+  <!-- The Buffet (Host Resources) -->
+  <rect x="50" y="100" width="700" height="250" fill="white" stroke="#ced6e0" stroke-width="2" rx="10"/>
+  <text x="70" y="130" font-family="Arial" font-size="14" font-weight="bold" fill="#747d8c">SERVER RAM (Buffet Libre)</text>
+
+  <!-- Container 1. Respectful Guest -->
+  <g transform="translate(150, 220)">
+    <rect x="-60" y="-40" width="120" height="80" fill="#2ecc71" rx="10"/>
+    <text x="0" y="0" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">App 1. 512MB</text>
+    <text x="0" y="20" font-family="Arial" font-size="10" fill="white" text-anchor="middle">(Limit: 1G)</text>
+    <text x="0" y="60" font-family="Arial" font-size="12" fill="#27ae60" text-anchor="middle" font-weight="bold">"Todo bien"</text>
+  </g>
+
+  <!-- Container 2: The Glutton (Memory Leak) -->
+  <g transform="translate(400, 220)">
+    <rect x="-60" y="-40" width="120" height="80" fill="#e67e22" rx="10">
+      <animate attributeName="width" values="120;140;120" dur="1s" repeatCount="indefinite" />
+      <animate attributeName="x" values="-60;-70;-60" dur="1s" repeatCount="indefinite" />
+    </rect>
+    <text x="0" y="0" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">App 2: 1024MB</text>
+    <text x="0" y="20" font-family="Arial" font-size="10" fill="white" text-anchor="middle">(Limit: 1G)</text>
+    <text x="0" y="60" font-family="Arial" font-size="12" fill="#d35400" text-anchor="middle" font-weight="bold">"¡MÁS COMIDA!"</text>
+  </g>
+
+  <!-- The OOM Killer (Security Bouncer) -->
+  <g transform="translate(650, 200)">
+    <rect x="-40" y="-60" width="80" height="120" fill="#2f3542" rx="10"/>
+    <text x="0" y="-70" font-family="Arial" font-size="14" font-weight="bold" fill="#e74c3c" text-anchor="middle">OOM KILLER</text>
+    
+    <!-- Gun/Action representation -->
+    <line x1="-30" y1="0" x2="-200" y2="0" stroke="#e74c3c" stroke-width="4" stroke-dasharray="10,5">
+        <animate attributeName="stroke-dashoffset" from="0" to="100" dur="0.5s" repeatCount="indefinite" />
+    </line>
+    <text x="-120" y="-20" font-family="Arial" font-size="12" fill="#e74c3c" text-anchor="middle" font-weight="bold">SIGKILL (9)</text>
+  </g>
+
+  <text x="400" y="400" font-family="Arial" font-size="16" fill="#2f3542" text-anchor="middle" font-weight="bold">"Si te pasas del límite, el kernel te saca del buffet (Error 137)"</text>
+</svg>

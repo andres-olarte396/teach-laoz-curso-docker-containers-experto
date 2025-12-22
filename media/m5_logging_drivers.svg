@@ -1,0 +1,62 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#f8f9fa"/>
+  
+  <text x="400" y="40" font-family="Arial" font-size="28" font-weight="bold" fill="#2d3436" text-anchor="middle">Logging Drivers: El Clasificador de Logs</text>
+
+  <!-- The Container (Source) -->
+  <g transform="translate(100, 180)">
+    <rect x="-60" y="-60" width="120" height="120" fill="#3498db" rx="10"/>
+    <text x="0" y="-70" font-family="Arial" font-size="14" font-weight="bold" fill="#2d3436" text-anchor="middle">CONTENEDOR</text>
+    <text x="0" y="5" font-family="Courier" font-size="12" fill="white" text-anchor="middle">console.log()</text>
+    <text x="0" y="25" font-family="Courier" font-size="12" fill="white" text-anchor="middle">print()</text>
+  </g>
+
+  <!-- The Sorting Machine (Docker Engine) -->
+  <g transform="translate(350, 150)">
+    <rect x="0" y="0" width="100" height="150" fill="#2f3542" rx="10"/>
+    <text x="50" y="75" font-family="Arial" font-size="14" font-weight="bold" fill="white" text-anchor="middle">LOGGING</text>
+    <text x="50" y="95" font-family="Arial" font-size="14" font-weight="bold" fill="white" text-anchor="middle">DRIVER</text>
+    
+    <!-- Input Arrow -->
+    <path d="M -130 90 L -10 90" stroke="#3498db" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  </g>
+
+  <!-- Destinations -->
+  
+  <!-- JSON File (The Bucket with a leak/limit) -->
+  <g transform="translate(550, 80)">
+    <rect x="0" y="0" width="150" height="60" fill="white" stroke="#ced6e0" stroke-width="2" rx="5"/>
+    <text x="75" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#2f3542" text-anchor="middle">json-file</text>
+    <text x="75" y="45" font-family="Arial" font-size="12" fill="#747d8c" text-anchor="middle">Disco Local (Rotación)</text>
+    <path d="M -100 80 L -10 20" stroke="#2f3542" stroke-width="2" marker-end="url(#arrow-dark)"/>
+  </g>
+
+  <!-- Syslog (The Pipe) -->
+  <g transform="translate(550, 170)">
+    <rect x="0" y="0" width="150" height="60" fill="white" stroke="#ced6e0" stroke-width="2" rx="5"/>
+    <text x="75" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#2f3542" text-anchor="middle">syslog</text>
+    <text x="75" y="45" font-family="Arial" font-size="12" fill="#747d8c" text-anchor="middle">Servidor Externo</text>
+    <path d="M -100 -10 L -10 20" stroke="#2f3542" stroke-width="2" marker-end="url(#arrow-dark)"/>
+  </g>
+
+  <!-- Non-Blocking Cloud (Splunk) -->
+  <g transform="translate(550, 260)">
+    <rect x="0" y="0" width="150" height="80" fill="#e8f4fd" stroke="#3498db" stroke-width="2" rx="5"/>
+    <text x="75" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#2f3542" text-anchor="middle">Splunk / Cloud</text>
+    <circle cx="20" cy="55" r="8" fill="#2ecc71"/>
+    <text x="85" y="60" font-family="Arial" font-size="12" fill="#2ecc71" text-anchor="middle" font-weight="bold">MODO NON-BLOCKING</text>
+    <path d="M -100 -100 L -10 20" stroke="#2f3542" stroke-width="2" marker-end="url(#arrow-dark)"/>
+  </g>
+
+  <text x="400" y="400" font-family="Arial" font-size="16" fill="#2d3436" text-anchor="middle" font-weight="bold">"Tú decides dónde caen los papeles (y que no inunden el suelo)"</text>
+
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3498db" />
+    </marker>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f3542" />
+    </marker>
+  </defs>
+</svg>

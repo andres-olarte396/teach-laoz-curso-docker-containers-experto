@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (Meadow) -->
+  <rect width="800" height="450" fill="#2ecc71" opacity="0.2"/>
+  <path d="M 0 400 Q 400 350 800 400 L 800 450 L 0 450 Z" fill="#27ae60" opacity="0.3"/>
+
+  <text x="400" y="45" font-family="Arial" font-size="28" font-weight="bold" fill="#2d3436" text-anchor="middle">Self-Healing: El Pastor y el Rebaño</text>
+
+  <!-- Shepherd (ReplicaSet) -->
+  <g transform="translate(150, 200)">
+    <circle cx="0" cy="-40" r="15" fill="#2d3436"/>
+    <rect x="-10" y="-25" width="20" height="40" fill="#2d3436" rx="5"/>
+    <rect x="-5" y="15" width="40" height="5" fill="#2d3436" rx="2"/> <!-- Staff -->
+    <text x="0" y="55" font-family="Arial" font-size="14" font-weight="bold" fill="#2d3436" text-anchor="middle">ReplicaSet</text>
+    <text x="0" y="72" font-family="Arial" font-size="12" fill="#2d3436" text-anchor="middle">(El Pastor)</text>
+    
+    <!-- Speech bubble -->
+    <path d="M 20 -40 L 60 -60 L 60 -20 Z" fill="white" stroke="#2d3436"/>
+    <rect x="60" y="-70" width="120" height="40" fill="white" stroke="#2d3436" rx="5"/>
+    <text x="120" y="-45" font-family="Arial" font-size="12" font-weight="bold" fill="#2ecc71" text-anchor="middle">¡Esa oveja ha muerto!</text>
+  </g>
+
+  <!-- Sheep (Pods) -->
+  <g transform="translate(450, 150)">
+    <!-- Ovejita 1 -->
+    <g transform="translate(0, 0)">
+      <ellipse cx="0" cy="0" rx="25" ry="18" fill="white"/>
+      <circle cx="20" cy="-10" r="8" fill="#2d3436"/> <!-- Head -->
+      <text x="0" y="35" font-family="Arial" font-size="12" fill="#2d3436" text-anchor="middle">Pod 1</text>
+    </g>
+    <!-- Ovejita 2 (Dead/Faded) -->
+    <g transform="translate(100, 50)" opacity="0.3">
+      <ellipse cx="0" cy="0" rx="25" ry="18" fill="white"/>
+      <circle cx="20" cy="-10" r="8" fill="#2d3436"/>
+      <text x="15" y="-15" font-size="20">☠️</text>
+      <text x="0" y="35" font-family="Arial" font-size="12" fill="#2d3436" text-anchor="middle">Pod 2 (Murió)</text>
+    </g>
+    <!-- Ovejita 3 (Being created) -->
+    <g transform="translate(200, 0)">
+      <ellipse cx="0" cy="0" rx="25" ry="18" fill="white" stroke="#3498db" stroke-dasharray="5,5"/>
+      <circle cx="20" cy="-10" r="8" fill="#3498db" opacity="0.5"/>
+      <text x="0" y="35" font-family="Arial" font-size="12" fill="#3498db" text-anchor="middle">Pod 3 (Nuevo)</text>
+    </g>
+  </g>
+
+  <!-- Deployment Instruction -->
+  <g transform="translate(400, 350)">
+    <rect x="-150" y="0" width="300" height="40" fill="#3498db" rx="20"/>
+    <text x="0" y="25" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Deployment: "Mantén 3 ovejas vivas"</text>
+  </g>
+
+  <text x="400" y="420" font-family="Arial" font-size="16" fill="#2d3436" text-anchor="middle" font-weight="bold">"El ReplicaSet no descansa. El Deployment es la ley."</text>
+</svg>

@@ -6,9 +6,9 @@ Los diagramas se definen en código `Mermaid.js` listo para usar.
 
 ---
 
-## Módulo 1: Fundamentos
+## Módulo 1. Fundamentos
 
-### Imagen 1.1: VMs vs Contenedores
+### Imagen 1.1. VMs vs Contenedores
 **Concepto**: Eficiencia y Recursos Compartidos.
 **Referencia**: `modulos/modulo_1/tema_1_subtema_1_contenido.md`
 **Prompt Sugerido**:
@@ -38,7 +38,7 @@ stateDiagram-v2
 
 ## Módulo 2: Imágenes y Build
 
-### Imagen 2.1: El Pastel de Capas
+### Imagen 2.1. El Pastel de Capas
 **Concepto**: Layer Caching.
 **Referencia**: `modulos/modulo_2/tema_2_subtema_2_contenido.md`
 **Prompt Sugerido**:
@@ -58,7 +58,7 @@ graph LR
 
 ## Módulo 3: Almacenamiento y Redes
 
-### Imagen 3.1: Volúmenes vs Bind Mounts
+### Imagen 3.1. Volúmenes vs Bind Mounts
 **Concepto**: Persistencia vs Desarrollo.
 **Referencia**: `modulos/modulo_3/tema_2_subtema_1_contenido.md`
 **Prompt Sugerido**:
@@ -90,7 +90,7 @@ graph TD
 
 ## Módulo 4: Docker Compose
 
-### Imagen 4.1: El Director de Orquesta
+### Imagen 4.1. El Director de Orquesta
 **Concepto**: Orquestación Declarativa.
 **Referencia**: `modulos/modulo_4/tema_1_subtema_1_contenido.md`
 **Prompt Sugerido**:
@@ -122,7 +122,7 @@ sequenceDiagram
 
 ## Módulo 6: Swarm
 
-### Diagrama 6.1: Arquitectura Swarm
+### Diagrama 6.1. Arquitectura Swarm
 **Concepto**: Managers y Workers.
 
 ```mermaid
@@ -151,7 +151,7 @@ graph TB
 
 ## Módulo 7: Kubernetes
 
-### Imagen 7.1: El Barco de Carga
+### Imagen 7.1. El Barco de Carga
 **Concepto**: K8s como Timonel.
 **Referencia**: `modulos/modulo_7/tema_1_subtema_1_contenido.md`
 **Prompt Sugerido**:

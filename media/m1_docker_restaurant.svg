@@ -1,0 +1,63 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#fff9f0"/>
+  
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" fill="#333" text-anchor="middle">Arquitectura Docker: El Restaurante</text>
+
+  <!-- 1. DOCKER CLIENT (The Waiter) -->
+  <g transform="translate(100, 150)">
+    <!-- Waiter Character -->
+    <rect x="0" y="50" width="60" height="100" fill="#3498db" rx="5"/>
+    <circle cx="30" cy="30" r="20" fill="#3498db"/>
+    <!-- Notebook (Command Line) -->
+    <rect x="40" y="70" width="30" height="40" fill="white" stroke="#333"/>
+    <text x="55" y="95" font-family="Courier New" font-size="8" text-anchor="middle" font-weight="bold">docker</text>
+    
+    <text x="30" y="180" font-family="Arial" font-size="16" font-weight="bold" fill="#2980b9" text-anchor="middle">CLIENT</text>
+    <text x="30" y="200" font-family="Arial" font-size="12" fill="#555" text-anchor="middle">(El Mesero)</text>
+    <text x="30" y="215" font-family="Arial" font-size="10" fill="#888" text-anchor="middle">Envía órdenes</text>
+  </g>
+
+  <!-- 2. DOCKER DAEMON (The Chef) -->
+  <g transform="translate(400, 150)">
+    <!-- Cooking Pot / Engine -->
+    <rect x="-60" y="50" width="120" height="80" fill="#7f8c8d" rx="10"/>
+    <rect x="-40" y="40" width="80" height="10" fill="#333" rx="5"/> <!-- Lid -->
+    <!-- Chef Hat -->
+    <path d="M -30 30 Q 0 -20 30 30 Z" fill="#ecf0f1" stroke="#333"/>
+    
+    <text x="0" y="180" font-family="Arial" font-size="16" font-weight="bold" fill="#2c3e50" text-anchor="middle">DAEMON</text>
+    <text x="0" y="200" font-family="Arial" font-size="12" fill="#555" text-anchor="middle">(El Chef)</text>
+    <text x="0" y="215" font-family="Arial" font-size="10" fill="#888" text-anchor="middle">Elabora los platos</text>
+    <text x="0" y="230" font-family="Arial" font-size="10" fill="#888" text-anchor="middle">(Contenedores)</text>
+  </g>
+
+  <!-- 3. DOCKER REGISTRY (The Supermarket) -->
+  <g transform="translate(680, 150)">
+    <!-- Shelf / Clouds -->
+    <rect x="-50" y="50" width="100" height="100" fill="#f1c40f" rx="10"/>
+    <!-- Image boxes on shelf -->
+    <rect x="-30" y="70" width="20" height="20" fill="white" opacity="0.8"/>
+    <rect x="10" y="70" width="20" height="20" fill="white" opacity="0.8"/>
+    <rect x="-30" y="110" width="60" height="20" fill="white" opacity="0.8"/>
+    
+    <text x="0" y="180" font-family="Arial" font-size="16" font-weight="bold" fill="#f39c12" text-anchor="middle">REGISTRY</text>
+    <text x="0" y="200" font-family="Arial" font-size="12" fill="#555" text-anchor="middle">(El Supermercado)</text>
+    <text x="0" y="215" font-family="Arial" font-size="10" fill="#888" text-anchor="middle">Almacena recetas</text>
+    <text x="0" y="230" font-family="Arial" font-size="10" fill="#888" text-anchor="middle">(Imágenes)</text>
+  </g>
+
+  <!-- Interaction Arrows -->
+  <path d="M 170 200 L 330 200" stroke="#3498db" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M 460 200 L 620 200" stroke="#f39c12" stroke-width="3" marker-end="url(#arrow)" stroke-dasharray="5,5"/>
+  
+  <text x="250" y="190" font-family="Arial" font-size="10" fill="#3498db" text-anchor="middle">"Traeme un Nginx"</text>
+  <text x="540" y="190" font-family="Arial" font-size="10" fill="#f39c12" text-anchor="middle">"Pull de imagen"</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333" />
+    </marker>
+  </defs>
+</svg>

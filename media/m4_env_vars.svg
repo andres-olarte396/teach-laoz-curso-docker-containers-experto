@@ -1,0 +1,61 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#f1f2f6"/>
+  
+  <text x="400" y="40" font-family="Arial" font-size="28" font-weight="bold" fill="#2f3542" text-anchor="middle">Variables de Entorno: El Panel de Control</text>
+
+  <!-- The .env File (The Manual/Checklist) -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="160" height="220" fill="white" stroke="#2ed573" stroke-width="3" rx="5"/>
+    <text x="80" y="30" font-family="Arial" font-size="16" font-weight="bold" fill="#2ed573" text-anchor="middle">.env</text>
+    <line x1="20" y1="50" x2="140" y2="50" stroke="#ced6e0" stroke-width="2"/>
+    <text x="25" y="80" font-family="Courier" font-size="12" fill="#2f3542">PORT=8080</text>
+    <text x="25" y="105" font-family="Courier" font-size="12" fill="#2f3542">DB_PASS=123</text>
+    <text x="25" y="130" font-family="Courier" font-size="12" fill="#2f3542">DEBUG=true</text>
+    <text x="80" y="245" font-family="Arial" font-size="12" fill="#747d8c" text-anchor="middle" font-weight="bold">"No se sube a Git"</text>
+  </g>
+
+  <!-- The Injection Point (Docker Compose) -->
+  <g transform="translate(350, 140)">
+    <rect x="0" y="0" width="100" height="150" fill="#3498db" rx="10"/>
+    <text x="50" y="75" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Docker</text>
+    <text x="50" y="95" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Compose</text>
+    
+    <!-- Arrows from .env -->
+    <path d="M -90 40 L -20 40" stroke="#2ed573" stroke-width="4" marker-end="url(#arrow-green)"/>
+    <path d="M -90 90 L -20 90" stroke="#2ed573" stroke-width="4" marker-end="url(#arrow-green)"/>
+  </g>
+
+  <!-- The Container (The Machine) -->
+  <g transform="translate(550, 100)">
+    <rect x="0" y="0" width="200" height="220" fill="#2f3542" rx="10"/>
+    <text x="100" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="white" text-anchor="middle">CONTENEDOR</text>
+    
+    <!-- Settings Knobs -->
+    <circle cx="50" cy="80" r="15" fill="#57606f"/>
+    <line x1="50" y1="80" x2="60" y2="70" stroke="white" stroke-width="3"/>
+    <text x="100" y="85" font-family="Arial" font-size="12" fill="#a4b0be">Puerto 8080</text>
+
+    <circle cx="50" cy="130" r="15" fill="#57606f"/>
+    <line x1="50" y1="130" x2="40" y2="120" stroke="white" stroke-width="3"/>
+    <text x="100" y="135" font-family="Arial" font-size="12" fill="#a4b0be">Contraseña OK</text>
+
+    <circle cx="50" cy="180" r="15" fill="#57606f"/>
+    <line x1="50" y1="180" x2="50" y2="165" stroke="white" stroke-width="3"/>
+    <text x="100" y="185" font-family="Arial" font-size="12" fill="#a4b0be">Modo: DEBUG</text>
+
+    <!-- Arrows from Compose -->
+    <path d="M -100 70 L -20 70" stroke="#3498db" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  </g>
+
+  <text x="400" y="380" font-family="Arial" font-size="16" fill="#2f3542" text-anchor="middle" font-weight="bold">"Cambia la configuración sin reconstruir la imagen"</text>
+
+  <defs>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2ed573" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3498db" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,57 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#f9f9f9"/>
+  
+  <text x="400" y="40" font-family="Arial" font-size="28" font-weight="bold" fill="#333" text-anchor="middle">El Dockerfile: Tu Manual de Instrucciones</text>
+
+  <!-- Recipe Book -->
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" width="220" height="300" fill="#e67e22" rx="10"/>
+    <rect x="10" y="10" width="200" height="280" fill="white" rx="5"/>
+    <text x="110" y="40" font-family="Courier New" font-size="16" font-weight="bold" fill="#333" text-anchor="middle">Dockerfile</text>
+    
+    <!-- Lines of "code" / instructions -->
+    <text x="30" y="80" font-family="Courier New" font-size="12" fill="#2980b9" font-weight="bold">FROM node:18</text>
+    <text x="30" y="105" font-family="Courier New" font-size="12" fill="#27ae60">WORKDIR /app</text>
+    <text x="30" y="130" font-family="Courier New" font-size="12" fill="#8e44ad">COPY . .</text>
+    <text x="30" y="155" font-family="Courier New" font-size="12" fill="#c0392b">RUN npm install</text>
+    <text x="30" y="180" font-family="Courier New" font-size="12" fill="#2c3e50">CMD ["node", "app"]</text>
+    
+    <text x="110" y="330" font-family="Arial" font-size="14" fill="#666" text-anchor="middle" font-style="italic">"La Receta"</text>
+  </g>
+
+  <!-- Robot Chef (The Builder) -->
+  <g transform="translate(450, 150)">
+    <!-- Body -->
+    <rect x="-40" y="0" width="80" height="100" fill="#bdc3c7" rx="5"/>
+    <rect x="-30" y="10" width="60" height="30" fill="#34495e" rx="3"/>
+    <circle cx="-15" cy="25" r="5" fill="#e74c3c"/>
+    <circle cx="15" cy="25" r="5" fill="#e74c3c"/>
+    <!-- Arms -->
+    <rect x="-70" y="40" width="30" height="10" fill="#95a5a6"/>
+    <rect x="40" y="40" width="30" height="10" fill="#95a5a6"/>
+    <!-- Chef Hat on robot -->
+    <path d="M -20 0 Q 0 -40 20 0 Z" fill="white" stroke="#333"/>
+    
+    <text x="0" y="130" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Docker Builder</text>
+    <text x="0" y="150" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">(Siguiendo órdenes)</text>
+  </g>
+
+  <!-- Product (The Image) -->
+  <g transform="translate(680, 180)">
+    <rect x="-40" y="-40" width="80" height="80" fill="#3498db" rx="10"/>
+    <text x="0" y="5" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">IMAGE</text>
+    
+    <text x="0" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#2980b9" text-anchor="middle">Resultado Final</text>
+  </g>
+
+  <!-- Arrows -->
+  <path d="M 330 200 L 400 200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 540 200 L 630 200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

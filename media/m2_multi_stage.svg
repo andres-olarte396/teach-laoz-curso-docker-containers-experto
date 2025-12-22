@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#0b0e14"/>
+  
+  <text x="400" y="40" font-family="Arial" font-size="28" font-weight="bold" fill="white" text-anchor="middle">Multi-stage Builds: El Cohete Espacial</text>
+
+  <!-- Stars -->
+  <circle cx="50" cy="50" r="1" fill="white"/>
+  <circle cx="150" cy="80" r="1.5" fill="white"/>
+  <circle cx="300" cy="20" r="1" fill="white"/>
+  <circle cx="500" cy="60" r="1" fill="white"/>
+  <circle cx="700" cy="100" r="1.5" fill="white"/>
+
+  <!-- Stage 1 (The Booster / Builder) -->
+  <g transform="translate(200, 300)">
+    <!-- Fire -->
+    <path d="M -20 50 Q 0 100 20 50 Z" fill="#e67e22"/>
+    <!-- Booster Body -->
+    <rect x="-30" y="-80" width="60" height="130" fill="#95a5a6" rx="5"/>
+    <text x="0" y="-20" font-family="Arial" font-size="10" fill="#2c3e50" text-anchor="middle" font-weight="bold">STAGE 1</text>
+    <text x="0" y="0" font-family="Arial" font-size="10" fill="#2c3e50" text-anchor="middle" font-weight="bold">BUILDER</text>
+    <text x="0" y="20" font-family="Arial" font-size="8" fill="#34495e" text-anchor="middle">(JDK, Maven, Go)</text>
+    <text x="0" y="35" font-family="Arial" font-size="8" fill="#c0392b" text-anchor="middle">800 MB</text>
+  </g>
+
+  <!-- Separating Arrow -->
+  <path d="M 300 150 Q 400 100 500 150" stroke="#3498db" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2 (The Capsule / Final Image) -->
+  <g transform="translate(600, 150)">
+    <!-- Capsule Body -->
+    <path d="M -30 20 L 30 20 L 20 -40 L -20 -40 Z" fill="#ecf0f1" stroke="#3498db" stroke-width="2"/>
+    <circle cx="0" cy="-10" r="10" fill="#3498db"/> <!-- Window -->
+    
+    <text x="0" y="45" font-family="Arial" font-size="12" font-weight="bold" fill="#2ecc71" text-anchor="middle">STAGE 2: FINAL</text>
+    <text x="0" y="65" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Sólo el Binario</text>
+    <text x="0" y="80" font-family="Arial" font-size="10" fill="#2ecc71" text-anchor="middle" font-weight="bold">10 MB</text>
+  </g>
+
+  <!-- Labels -->
+  <text x="200" y="420" font-family="Arial" font-size="14" fill="#bdc3c7" text-anchor="middle">1. Se construye el artefacto</text>
+  <text x="600" y="250" font-family="Arial" font-size="14" fill="#bdc3c7" text-anchor="middle">2. Se copia y se lanza</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3498db" />
+    </marker>
+  </defs>
+</svg>

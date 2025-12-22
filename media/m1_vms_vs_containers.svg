@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa"/>
+  
+  <!-- Labels -->
+  <text x="200" y="40" font-family="Arial" font-size="24" font-weight="bold" fill="#333" text-anchor="middle">Máquinas Virtuales (Casas)</text>
+  <text x="600" y="40" font-family="Arial" font-size="24" font-weight="bold" fill="#333" text-anchor="middle">Contenedores (Edificio)</text>
+
+  <!-- LEFT SIDE: VMs (Detached Houses) -->
+  <g transform="translate(100, 100)">
+    <!-- House 1 -->
+    <g transform="translate(0, 0)">
+      <rect x="10" y="100" width="80" height="60" fill="#aec6cf" stroke="#333" stroke-width="2"/>
+      <polygon points="10,100 50,60 90,100" fill="#ff6961" stroke="#333" stroke-width="2"/>
+      <rect x="40" y="130" width="20" height="30" fill="#77dd77" stroke="#333"/>
+      <text x="50" y="180" font-family="Arial" font-size="12" text-anchor="middle">VM 1 (Heavy)</text>
+    </g>
+    <!-- House 2 -->
+    <g transform="translate(100, 0)">
+      <rect x="10" y="100" width="80" height="60" fill="#aec6cf" stroke="#333" stroke-width="2"/>
+      <polygon points="10,100 50,60 90,100" fill="#ff6961" stroke="#333" stroke-width="2"/>
+      <rect x="40" y="130" width="20" height="30" fill="#77dd77" stroke="#333"/>
+      <text x="50" y="180" font-family="Arial" font-size="12" text-anchor="middle">VM 2 (Heavy)</text>
+    </g>
+    <!-- Infrastructure Label -->
+    <rect x="-10" y="210" width="220" height="30" fill="#ddd" rx="5"/>
+    <text x="100" y="230" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Hypervisor / Hardware</text>
+  </g>
+
+  <!-- RIGHT SIDE: Containers (Building) -->
+  <g transform="translate(500, 100)">
+    <!-- Building -->
+    <rect x="30" y="0" width="140" height="200" fill="#add8e6" stroke="#333" stroke-width="3" rx="5"/>
+    <!-- Windows (Containers) -->
+    <rect x="50" y="20" width="40" height="30" fill="#ffb347" stroke="#333" rx="3"/>
+    <rect x="110" y="20" width="40" height="30" fill="#ffb347" stroke="#333" rx="3"/>
+    <rect x="50" y="70" width="40" height="30" fill="#ffb347" stroke="#333" rx="3"/>
+    <rect x="110" y="70" width="40" height="30" fill="#ffb347" stroke="#333" rx="3"/>
+    <rect x="50" y="120" width="40" height="30" fill="#ffb347" stroke="#333" rx="3"/>
+    <rect x="110" y="120" width="40" height="30" fill="#ffb347" stroke="#333" rx="3"/>
+    
+    <text x="100" y="180" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Containers (Light)</text>
+    
+    <!-- Infrastructure Label -->
+    <rect x="-10" y="210" width="220" height="30" fill="#2c3e50" rx="5"/>
+    <text x="100" y="230" font-family="Arial" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Shared Host Kernel</text>
+  </g>
+
+  <!-- Comparative Legend -->
+  <g transform="translate(250, 320)">
+    <text x="0" y="0" font-family="Arial" font-size="14" fill="#666">VMs: Aislamiento fuerte, pero alto consumo de recursos.</text>
+    <text x="0" y="25" font-family="Arial" font-size="14" fill="#666">Contenedores: Eficiencia extrema, compartiendo recursos.</text>
+  </g>
+</svg>
