@@ -1,0 +1,133 @@
+{
+  "modulos": [
+    {
+      "id": 1,
+      "titulo": "Fundamentos de la Containerización",
+      "temas": [
+        {
+          "id": 1,
+          "titulo": "Historia y Arquitectura",
+          "subtemas": [
+            { "id": 1, "titulo": "VMs vs Contenedores" },
+            { "id": 2, "titulo": "Arquitectura Docker Engine" }
+          ]
+        },
+        {
+          "id": 2,
+          "titulo": "Primeros Pasos",
+          "subtemas": [
+            { "id": 1, "titulo": "Instalación y Hola Mundo" },
+            { "id": 2, "titulo": "Ciclo de vida básico" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Maestría en Imágenes",
+      "temas": [
+        {
+          "id": 1,
+          "titulo": "Dockerfiles Eficientes",
+          "subtemas": [
+            { "id": 1, "titulo": "Instrucciones Clave" },
+            { "id": 2, "titulo": "Contexto de Build" }
+          ]
+        },
+        {
+          "id": 2,
+          "titulo": "Optimización Avanzada",
+          "subtemas": [
+            { "id": 1, "titulo": "Multi-stage Builds" },
+            { "id": 2, "titulo": "Gestión de Caché" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Networking y Persistencia",
+      "temas": [
+        {
+          "id": 1,
+          "titulo": "Redes en Docker",
+          "subtemas": [
+            { "id": 1, "titulo": "Drivers de Red" },
+            { "id": 2, "titulo": "Comunicación entre contenedores" }
+          ]
+        },
+        {
+          "id": 2,
+          "titulo": "Volúmenes y Datos",
+          "subtemas": [
+            { "id": 1, "titulo": "Tipos de Monturas" },
+            { "id": 2, "titulo": "Backups y Migración" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Docker Compose",
+      "temas": [
+        {
+          "id": 1,
+          "titulo": "Aplicaciones Multi-contenedor",
+          "subtemas": [
+            { "id": 1, "titulo": "Docker Compose YAML" },
+            { "id": 2, "titulo": "Dependencias y Healthchecks" }
+          ]
+        },
+        {
+          "id": 2,
+          "titulo": "Flujos de Desarrollo",
+          "subtemas": [
+            { "id": 1, "titulo": "Development vs Production" },
+            { "id": 2, "titulo": "Variables de Entorno" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Seguridad y Producción",
+      "temas": [
+        {
+          "id": 1,
+          "titulo": "Seguridad",
+          "subtemas": [
+            { "id": 1, "titulo": "Usuarios y Privilegios" },
+            { "id": 2, "titulo": "Escaneo de Imágenes" }
+          ]
+        },
+        {
+          "id": 2,
+          "titulo": "Recursos",
+          "subtemas": [
+            { "id": 1, "titulo": "Límites de CPU y Memoria" },
+            { "id": 2, "titulo": "Logging Drivers" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Orquestación",
+      "temas": [
+        {
+          "id": 1,
+          "titulo": "Docker Swarm",
+          "subtemas": [
+            { "id": 1, "titulo": "Conceptos de Cluster" },
+            { "id": 2, "titulo": "Servicios y Escalamiento" }
+          ]
+        },
+        {
+          "id": 2,
+          "titulo": "Más allá de Docker",
+          "subtemas": [{ "id": 1, "titulo": "Intro a Kubernetes" }]
+        }
+      ]
+    }
+  ]
+}

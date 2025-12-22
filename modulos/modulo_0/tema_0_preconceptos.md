@@ -1,0 +1,77 @@
+# Módulo 0: Conceptos Fundamentales y Glosario
+
+## Propósito
+
+Este módulo de nivelación asegura que todos los participantes tengan el mismo entendimiento base sobre sistemas operativos y virtualización antes de comenzar con Docker.
+
+## Glosario Técnico
+
+### Virtualización
+
+**Definición**: Creación de una versión virtual (no real) de algo, como un sistema operativo, un servidor, un dispositivo de almacenamiento o un recurso de red.
+**Contexto**: Antes de los contenedores, las máquinas virtuales (VMs) eran el estándar para el aislamiento de aplicaciones.
+
+### Kernel
+
+**Definición**: El núcleo de un sistema operativo. Es la capa que conecta el software con el hardware.
+**Contexto**: Docker utiliza el kernel del sistema operativo host (en Linux) para ejecutar contenedores, lo que los hace más ligeros que las VMs.
+
+### Shell / CLI
+
+**Definición**: Interfaz de línea de comandos. Métodos para dar instrucciones a la computadora mediante texto.
+**Contexto**: Docker se administra principalmente a través de la CLI (`docker run`, `docker ps`, etc.).
+
+### Imagen (Image)
+
+**Definición**: Un paquete ejecutable ligero e independiente que incluye todo lo necesario para ejecutar una pieza de software, incluido el código, el tiempo de ejecución, las herramientas del sistema, las bibliotecas y la configuración.
+**Analogía**: Es como un "molde" o "plano" de una casa.
+
+### Contenedor (Container)
+
+**Definición**: Una instancia en ejecución de una imagen.
+**Analogía**: Es la "casa" construida a partir del plano. Puedes construir muchas casas idénticas (contenedores) del mismo plano (imagen).
+
+### Daemon
+
+**Definición**: Un programa informático que se ejecuta como un proceso en segundo plano, en lugar de estar bajo el control directo de un usuario interactivo.
+**Contexto**: El `dockerd` (Docker Daemon) es el proceso que gestiona los objetos de Docker como imágenes, contenedores, redes y volúmenes.
+
+### Host
+
+**Definición**: La máquina física o virtual donde se ejecuta el Docker Daemon.
+
+## Conceptos Previos Necesarios
+
+### 1. Navegación en Terminal
+
+Docker se maneja principalmente desde la terminal. Debes sentirte cómodo con comandos básicos:
+
+- **`ls` (List)**: Muestra los archivos en tu carpeta actual.
+- **`cd` (Change Directory)**: Te mueve a otra carpeta (ej. `cd mis-proyectos`).
+- **`mkdir` (Make Directory)**: Crea una carpeta nueva.
+- **`pwd` (Print Working Directory)**: Te dice dónde estás parado ahora mismo.
+
+### 2. Permisos de Archivos
+
+En Linux (y dentro de los contenedores), cada archivo tiene un sistema de control de acceso:
+
+- **Lectura (Read - r)**: Ver el contenido.
+- **Escritura (Write - w)**: Modificar el archivo.
+- **Ejecución (Execute - x)**: Correr el archivo como un programa.
+  _¿Por qué importa?_ A veces un contenedor fallará porque no tiene permiso para escribir en una carpeta que compartiste.
+
+### 3. Puertos de Red
+
+Imagina tu computadora como un edificio de apartamentos (Dirección IP). Cada apartamento es un **Puerto**.
+
+- **IP**: La dirección de la máquina (ej. `192.168.1.5` o `127.0.0.1` para localhost).
+- **Puerto**: Un número del 1 al 65535 donde un servicio específico escucha. - Puerto 80: Web normal (HTTP). - Puerto 443: Web segura (HTTPS). - Puerto 3306: MySQL.
+  _Tip_: En Docker, "mapear puertos" significa conectar un puerto de tu máquina real (Host) con un puerto dentro del contenedor.
+
+### 4. Variables de Entorno
+
+Son configuraciones que viven en el sistema operativo, fuera de tu código, en formato `CLAVE=VALOR`.
+
+- **Ejemplo**: `DATABASE_URL=postgres://usuario:pass@localhost:5432/db`
+- **Uso**: Las aplicaciones modernas (12-Factor App) leen su configuración de estas variables.
+- **En Docker**: Usamos variables de entorno intensivamente para configurar contenedores sin tocar su código fuente.
