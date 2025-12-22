@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Seguridad del Docker Daemon
+# 1. Seguridad del Docker Daemon
 
 ## Objetivo
 
@@ -38,6 +38,8 @@ Por defecto, los contenedores comparten el mismo Kernel (Cerebro) que el sistema
 
 El **Socket de Docker** es un archivo especial que sirve para hablar con el Daemon (el Jefe Supremo).
 Es el equivalente informático a la **Varita de Saúco** de Harry Potter o el **Guantelete del Infinito**. Quien lo tenga, lo controla todo.
+
+![Docker Socket Danger](../../media/m5_docker_socket.svg)
 
 #### El ataque clásico
 Imagina que ejecutas este comando inocente:

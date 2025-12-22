@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Límites de CPU y Memoria
+# 1. Límites de CPU y Memoria
 
 ## Objetivo
 
@@ -18,6 +18,8 @@ Por defecto, Docker es un padre muy permisivo. Le dice a los contenedores:
 Esto es peligroso.
 Imagina que tienes una aplicación Java con una fuga de memoria (Memory Leak). Empezará a tragar RAM... 1GB... 4GB... 16GB...
 Cuando se acabe la RAM física, tu servidor entero se volverá lento y finalmente **colapsará**. Todas las demás aplicaciones morirán.
+
+![Resource Limits](../../media/m5_resource_limits.svg)
 
 ### 1. Límites de Memoria (RAM)
 
@@ -42,6 +44,21 @@ También podemos limitar la capacidad de procesamiento.
 *   Significado: "Solo puedes usar la mitad de un núcleo".
 
 A diferencia de la memoria, si un contenedor pide más CPU de la permitida, **NO se le mata**. Simplemente se le pone lento (Throttling). Docker lo frena.
+
+```mermaid
+graph TD
+    A[Contenedor Pide Recursos] --> RAM{¿Es RAM?}
+    RAM -- Sí --> RAM_LIM{¿Supera Límite?}
+    RAM_LIM -- Sí --> OOM[OOM Killer: SIGKILL 9]
+    OOM --> DEAD[Contenedor Muerto - Error 137]
+    
+    RAM -- No (CPU) --> CPU_LIM{¿Supera Límite?}
+    CPU_LIM -- Sí --> THROTTLE[Throttling: Lento]
+    THROTTLE --> ALIVE[Contenedor Vivo pero Lento]
+    
+    style OOM fill:#f66
+    style THROTTLE fill:#ff9
+```
 
 ### Configuración en Compose (Estándar Moderno)
 

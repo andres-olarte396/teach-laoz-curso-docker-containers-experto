@@ -1,4 +1,4 @@
-# Contenido del Subtema 2 – Usuario No-Root
+# 2. Usuario No-Root
 
 ## Objetivo
 
@@ -20,11 +20,9 @@ Por defecto, cuando escribes un Dockerfile, eres el **Rey (Root)**.
 **El Riesgo**: Si un hacker encuentra un hueco en tu aplicación (ej. una inyección de código en tu Node.js), él hereda tus permisos.
 Si tu app corría como Rey, **¡el hacker ahora es Rey!** Puede instalar mineros de bitcoin, robar datos o atacar otros servidores.
 
-### La Solución: El Panadero (Usuario Limitado)
-
-La regla de oro en seguridad es el **Principio del Menor Privilegio**.
-Si tu aplicación solo necesita hornear pan (escribir logs y leer código), créale un usuario "Panadero" que solo pueda hacer eso.
 Si el hacker toma el control del Panadero y trata de quemar el castillo (borrar `/etc`), el sistema le dirá: **"Acceso Denegado"**.
+
+![Non-Root User](../../media/m5_non_root_user.svg)
 
 ### Cómo implementarlo (La receta correcta)
 
@@ -57,6 +55,18 @@ Si intentas arrancar un Nginx en el puerto 80 con un usuario limitado, fallará.
 **Solución**: Usa puertos altos para usuarios limitados.
 *   En vez de puerto 80 -> Puerto 8080.
 *   En vez de puerto 443 -> Puerto 8443.
+
+```mermaid
+graph TD
+    H[Hacker] -->|Ataca App| C[Contenedor]
+    subgraph Container[Dentro del Contenedor]
+      C --> U{¿Quién es el usuario?}
+      U -- Root -->|Poder| SYS[Puede atacar el Kernel/Host]
+      U -- Plebeyo -->|Bloqueado| D[Permission Denied]
+    end
+    style SYS fill:#f66
+    style D fill:#6f6
+```
 
 ## Paso a Paso práctico
 

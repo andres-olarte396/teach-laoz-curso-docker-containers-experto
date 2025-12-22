@@ -1,4 +1,4 @@
-# Contenido del Subtema 2 – Logging Drivers
+# 2. Logging Drivers
 
 ## Objetivo
 
@@ -12,10 +12,9 @@ Al finalizar este subtema, serás capaz de:
 
 ### La Bomba de Tiempo Silenciosa (JSON File)
 
-Por defecto, Docker captura todo lo que tu app imprime en pantalla (`console.log`, `print`) y lo guarda en un archivo de texto en tu disco duro.
-**El problema**: Docker no tiene límite.
-Si tu app es muy habladora, ese archivo crecerá: 1GB, 10GB, 100GB.
 Un día, tu servidor dirá "Disk Full" y todo se detendrá.
+
+![Logging Drivers](../../media/m5_logging_drivers.svg)
 
 ### Solución: Rotación de Logs (Cambiar el balde)
 
@@ -51,6 +50,23 @@ A veces no quieres guardar los logs en el disco local, sino enviarlos a un servi
 
 1.  **Syslog**: Envía los logs al sistema operativo (que luego puede reenviarlos a otro lado).
 2.  **Splunk / AWS CloudWatch**: Envío directo a la nube.
+
+```mermaid
+graph LR
+    APP[App Output] --> DRV{Logging Driver}
+    DRV -->|Default| JSON[JSON File]
+    DRV -->|Cloud| SPL[Splunk / ELK]
+    DRV -->|OS| SYS[Syslog]
+    
+    subgraph Local[Disco Local]
+        JSON --> ROT{¿Rotación?}
+        ROT -- No --> BOMB[¡BOMBA DE TIEMPO!]
+        ROT -- Sí --> OK[Disco Controlado]
+    end
+    
+    style BOMB fill:#f66
+    style OK fill:#6f6
+```
 
 **Advertencia Crítica: Blocking vs Non-Blocking**
 Si configuras el driver para enviar logs a un servidor remoto (ej. Splunk) y ese servidor se cae... ¿qué hace tu app?
