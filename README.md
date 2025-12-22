@@ -75,7 +75,7 @@ Este curso proporciona una formación integral en **Docker y tecnologías de con
 **Duración**: 2-3 horas  
 Repaso de fundamentos de Linux, redes y desarrollo de software necesarios para el curso.
 
-### Módulo 1: Fundamentos de la Containerización
+### Módulo 1. Fundamentos de la Containerización
 **Duración**: 5-6 horas  
 - 1.1 Historia y Arquitectura (VMs vs Contenedores, Docker Engine)
 - 1.2 Primeros Pasos (Instalación, Hola Mundo, Ciclo de vida)

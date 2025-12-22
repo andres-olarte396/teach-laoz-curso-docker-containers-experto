@@ -17,19 +17,19 @@
 
 ---
 
-## MÓDULO 1: Fundamentos de Contenedores
+## MÓDULO 1. Fundamentos de Contenedores
 
-### Tema 1.1: VMs vs Contenedores
+### Tema 1.1. VMs vs Contenedores
 
 **Archivo**: `modulos/modulo_1/tema_1_subtema_1_contenido.md`
 
-#### Conceptos Clave Verificados
+#### Conceptos Verificados - T1.1
 
 - Diferencia arquitectónica: Hardware Virtualization vs OS Virtualization
 - Analogía "Casa vs Apartamento" (validada con Docker docs)
 - Eficiencia de recursos y tiempo de arranque
 
-#### Referencias Sustentatorias
+#### Referencias Sustentatorias - T1.1
 
 **[1] Containers vs. Virtual Machines**
 
@@ -61,7 +61,7 @@
 - **Cita clave**:
   > "Think of a container like an apartment... you share common infrastructure like plumbing and heating."
 
-#### Estado de Integridad
+#### Estado de Integridad - T1.1
 
 - ✅ **Contenido Validado**: El contenido es preciso y utiliza analogías alineadas con la industria.
 
@@ -71,13 +71,13 @@
 
 **Archivo**: `modulos/modulo_1/tema_1_subtema_2_contenido.md`
 
-#### Conceptos Clave Verificados
+#### Conceptos Verificados - T1.2
 
 - Componentes: Daemon (dockerd), API, CLI
 - Rol de `containerd` y `runc`
 - Modelo Cliente-Servidor
 
-#### Referencias Sustentatorias
+#### Referencias Sustentatorias - T1.2
 
 **[1] Docker Overview: The Docker Architecture**
 
@@ -109,7 +109,7 @@
 - **Cita clave**:
   > "Docker engine allows you to simply call `runc` directly if you want to run a container without the daemon."
 
-#### Estado de Integridad
+#### Estado de Integridad - T1.2
 
 - ✅ **Contenido Validado**: Correcta distinción entre Cliente, Daemon y el rol subyacente de containerd.
 
@@ -165,7 +165,7 @@
 
 ## MÓDULO 2: Construcción de Imágenes (Dockerfiles)
 
-### Tema 1.1: Instrucciones Clave (Dockerfile)
+### Tema 1.1. Instrucciones Clave (Dockerfile)
 
 **Archivo**: `modulos/modulo_2/tema_1_subtema_1_contenido.md`
 
@@ -311,7 +311,7 @@
 
 ## MÓDULO 3: Redes y Almacenamiento
 
-### Tema 1.1: Drivers de Red (Bridge, Host, None)
+### Tema 1.1. Drivers de Red (Bridge, Host, None)
 
 **Archivo**: `modulos/modulo_3/tema_1_subtema_1_contenido.md`
 
@@ -407,7 +407,7 @@
 
 ---
 
-### Tema 2.1: Volúmenes vs Bind Mounts
+### Tema 2.1. Volúmenes vs Bind Mounts
 
 **Archivo**: `modulos/modulo_3/tema_2_subtema_1_contenido.md`
 
@@ -457,7 +457,7 @@
 
 ## MÓDULO 4: Docker Compose
 
-### Tema 1.1: Estructura YAML y Especificación
+### Tema 1.1. Estructura YAML y Especificación
 
 **Archivo**: `modulos/modulo_4/tema_1_subtema_1_contenido.md`
 
@@ -549,7 +549,7 @@
 
 ---
 
-### Tema 2.1: Overrides y Entornos
+### Tema 2.1. Overrides y Entornos
 
 **Archivo**: `modulos/modulo_4/tema_2_subtema_1_contenido.md`
 
@@ -634,7 +634,7 @@
 
 ## MÓDULO 5: Seguridad y Producción
 
-### Tema 1.1: Seguridad del Daemon (Socket y Root)
+### Tema 1.1. Seguridad del Daemon (Socket y Root)
 
 **Archivo**: `modulos/modulo_5/tema_1_subtema_1_contenido.md`
 
@@ -718,7 +718,7 @@
 
 ---
 
-### Tema 2.1: Límites de Recursos (Cgroups v2)
+### Tema 2.1. Límites de Recursos (Cgroups v2)
 
 **Archivo**: `modulos/modulo_5/tema_2_subtema_1_contenido.md`
 
@@ -796,7 +796,7 @@
 
 ## MÓDULO 6: Orquestación con Swarm
 
-### Tema 1.1: Managers y Workers (Raft)
+### Tema 1.1. Managers y Workers (Raft)
 
 **Archivo**: `modulos/modulo_6/tema_1_subtema_1_contenido.md`
 
@@ -888,7 +888,7 @@
 
 ---
 
-### Tema 2.1: Intro a Kubernetes (Pods)
+### Tema 2.1. Intro a Kubernetes (Pods)
 
 **Archivo**: `modulos/modulo_6/tema_2_subtema_1_contenido.md`
 
@@ -936,7 +936,7 @@
 
 ## MÓDULO 7: Introducción a Kubernetes
 
-### Tema 1.1: Elementos Básicos (Control Plane, Nodes)
+### Tema 1.1. Elementos Básicos (Control Plane, Nodes)
 
 **Archivo**: `modulos/modulo_7/tema_1_subtema_1_contenido.md`
 
@@ -1008,7 +1008,7 @@
 
 ---
 
-### Tema 2.1: Objetos de Carga de Trabajo (Deployments)
+### Tema 2.1. Objetos de Carga de Trabajo (Deployments)
 
 **Archivo**: `modulos/modulo_7/tema_2_subtema_1_contenido.md`
 

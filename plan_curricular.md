@@ -20,7 +20,7 @@
 
 ## 📚 Estructura de Módulos
 
-### Módulo 1: Fundamentos de la Containerización
+### Módulo 1. Fundamentos de la Containerización
 
 **Objetivo**: Comprender qué son los contenedores, diferencias con VMs y arquitectura de Docker.
 
