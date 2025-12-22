@@ -13,7 +13,7 @@
 ### ESTADO DE INTEGRIDAD GLOBAL
 
 - ✅ **Módulos Validados Completamente**: Módulo 1 (Fundamentos)
-- ⚠️ **Módulos con Recomendaciones**: N/A (Por ahora)
+- ⚠️ **Módulos con Recomendaciones**: N/A para la totalidad del curso (siguiente paso sugerido).
 - ⏳ **Pendientes**: Módulos 0, 2-7.
 
 ### ACCIONES REQUERIDAS
