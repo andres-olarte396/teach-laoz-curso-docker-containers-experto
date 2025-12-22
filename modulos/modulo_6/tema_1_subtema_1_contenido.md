@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Conceptos de Cluster
+# 1. Conceptos de Cluster
 
 ## Objetivo
 
@@ -23,6 +23,8 @@ Si un servidor explota, Swarm mueve los contenedores a otro servidor automática
 ### La Jerarquía: Managers y Workers
 
 Imagina una obra en construcción.
+
+![Swarm Cluster](../../media/m6_swarm_cluster.svg)
 
 1.  **Managers (Arquitectos / Cerebros)**:
     *   Tienen los planos (El estado deseado: "Quiero 3 réplicas de Nginx").
@@ -80,10 +82,23 @@ Vamos a convertir tu Docker aburrido en un Swarm Manager.
 
 ```mermaid
 graph TB
-    Mgr[Manager Node] -->|Asigna Tarea| W1[Worker Node 1]
-    Mgr -->|Asigna Tarea| W2[Worker Node 2]
-    W1 -->|Ejecuta| C1[Contenedor]
-    W2 -->|Ejecuta| C2[Contenedor]
+    subgraph ControlPlane[Plano de Control]
+        Mgr1[Manager 1 - Leader]
+        Mgr2[Manager 2]
+        Mgr3[Manager 3]
+        Mgr1 --- Mgr2 --- Mgr3 --- Mgr1
+    end
+
+    ControlPlane -->|Orquesta| W1[Worker A]
+    ControlPlane -->|Orquesta| W2[Worker B]
+    ControlPlane -->|Orquesta| W3[Worker C]
+
+    W1 -->|Réplica| C1[Web App]
+    W2 -->|Réplica| C2[Web App]
+    W3 -->|Réplica| C3[Web App]
+
+    style Mgr1 fill:#3498db,color:white
+    style ControlPlane fill:#f1f2f6
 ```
 
 ## Resumen

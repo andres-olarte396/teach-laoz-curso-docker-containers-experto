@@ -1,4 +1,4 @@
-# Contenido del Subtema 1 – Intro a Kubernetes
+# 1. Intro a Kubernetes
 
 ## Objetivo
 
@@ -13,8 +13,9 @@ Al finalizar este subtema, serás capaz de:
 ### El Elefante en la Habitación (K8s)
 
 Kubernetes (K8s) es el estándar de la industria. Lo creó Google.
-Si Docker Swarm es como manejar un coche automático, Kubernetes es como pilotar un avión comercial.
 Tiene mil botones, pero te lleva a cualquier lugar del mundo.
+
+![Intro to Kubernetes](../../media/m6_k8s_intro.svg)
 
 ### Concepto Clave: El Pod (La Vaina)
 
@@ -41,6 +42,24 @@ Docker Swarm era simple ("Servicios"). Kubernetes es burocrático.
 
 3.  **Pod (El Trabajador)**:
     Es quien hace el trabajo real.
+
+```mermaid
+graph TD
+    User((Usuario)) -->|kubectl apply| D[Deployment]
+    D -->|Gestiona| RS[ReplicaSet]
+    RS -->|Asegura| P1[Pod 1]
+    RS -->|Asegura| P2[Pod 2]
+    RS -->|Asegura| P3[Pod 3]
+    
+    subgraph PodUnit1[Pod 1]
+        P1 --> C1[Contenedor Principal]
+        P1 --> C2[Contenedor Log-Collector]
+    end
+    
+    style D fill:#3498db,color:white
+    style RS fill:#e67e22,color:white
+    style PodUnit1 fill:#f1f2f6
+```
 
 Tú creas un *Deployment*. El Deployment crea un *ReplicaSet*. El ReplicaSet crea los *Pods*.
 

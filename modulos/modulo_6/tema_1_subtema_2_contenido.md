@@ -1,4 +1,4 @@
-# Contenido del Subtema 2 – Servicios y Escalamiento
+# 2. Servicios y Escalamiento
 
 ## Objetivo
 
@@ -15,11 +15,9 @@ Al finalizar este subtema, serás capaz de:
 - **Mundo Viejo (`docker run`)**: Creas el contenedor "Servidor-Web-Principal". Si se cae, corres en círculos gritando y tratas de revivirlo manualmente. Es tu mascota, le tienes cariño.
 - **Mundo Nuevo (`docker service`)**: Dices "Necesito 5 servidores web funcionando". No te importa cómo se llaman ni dónde están. Si uno muere, Swarm crea otro idéntico al instante. Es ganado.
 
-### El Servicio (Service)
-
-Un **Servicio** es la definición del estado que deseas.
-Es un contrato que firmas con Docker Swarm:
 _"Prometo mantener siempre 3 réplicas de Nginx vivas"_.
+
+![Services and Scaling](../../media/m6_service_scaling.svg)
 
 Swarm monitorea el sistema cada segundo.
 
@@ -81,7 +79,20 @@ Swarm hará esto:
 
 ## Resumen
 
-- **Servicio**: El jefe que manda.
-- **Tarea (Task)**: El contenedor que trabaja.
-- **Escalar**: Es cambiar un número en el contrato.
 - **Update**: Es cambiar las ruedas del auto mientras sigue andando.
+
+```mermaid
+graph TD
+    A[Usuario cambia contrato: Scale 1 -> 3] --> B{Loop de Reconciliación}
+    B -- ¿Estado Real == Deseado? --> YES[No hacer nada]
+    B -- No --> D[Swarm crea Tarea/Contenedor]
+    D --> E[Monitor de Salud]
+    E -- Healthy --> B
+    E -- Unhealthy --> F[Mata y reintenta]
+    F --> D
+    
+    style B fill:#3498db,color:white
+    style D fill:#e67e22,color:white
+```
+
+---
