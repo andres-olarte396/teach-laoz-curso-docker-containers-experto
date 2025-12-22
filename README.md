@@ -17,6 +17,7 @@
 - [Duración y Complejidad](#-duración-y-complejidad)
 - [Cómo Usar Este Curso](#-cómo-usar-este-curso)
 - [Estructura de Archivos](#-estructura-de-archivos)
+- [Índice de Contenidos](#-índice-de-contenidos)
 - [Referencias Académicas](#-referencias-académicas)
 - [Audiencia Objetivo](#-audiencia-objetivo)
 - [Certificación](#-certificación)
@@ -260,6 +261,22 @@ teach-laoz-curso-docker-containers-experto/
 - `tema_X_subtema_Y_ejercicios.md`: Ejercicios prácticos
 - `tema_X_subtema_Y_evaluacion.md`: Evaluaciones
 - `tema_X_subtema_Y_guion.md`: Guión para instructores
+
+---
+
+## 📑 Índice de Contenidos
+
+Para navegar fácilmente por todo el contenido del curso, consulta el **[ÍNDICE.md](INDICE.md)** que incluye:
+
+- 📂 Enlaces directos a todos los módulos y temas
+- 📄 Acceso rápido a contenidos teóricos
+- ✏️ Enlaces a ejercicios prácticos
+- 📝 Acceso a todas las evaluaciones
+- 🎬 Guiones para instructores
+
+El índice está organizado de forma jerárquica y permite acceder directamente a cualquier recurso del curso.
+
+**[→ Ver Índice Completo del Curso](INDICE.md)**
 
 ---
 
