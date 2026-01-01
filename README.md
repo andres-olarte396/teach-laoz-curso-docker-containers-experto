@@ -176,45 +176,25 @@ Repaso de fundamentos de Linux, redes y desarrollo de software necesarios para e
 
 ### Flujo de Aprendizaje Sugerido
 
-```
-┌─────────────┐
-│  Módulo 0   │ (Opcional - Pre-conceptos)
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  Módulo 1   │ ──► Fundamentos esenciales
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  Módulo 2   │ ──► Creación de imágenes
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  Módulo 3   │ ──► Networking y datos
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  Módulo 4   │ ──► Multi-contenedor
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  Módulo 5   │ ──► Producción y seguridad
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  Módulo 6   │ ──► Orquestación básica
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  Módulo 7   │ ──► Kubernetes
-└─────────────┘
+```mermaid
+flowchart TD
+    M0["Módulo 0<br/>(Opcional - Pre-conceptos)"]
+    M1["Módulo 1<br/>Fundamentos esenciales"]
+    M2["Módulo 2<br/>Creación de imágenes"]
+    M3["Módulo 3<br/>Networking y datos"]
+    M4["Módulo 4<br/>Multi-contenedor"]
+    M5["Módulo 5<br/>Producción y seguridad"]
+    M6["Módulo 6<br/>Orquestación básica"]
+    M7["Módulo 7<br/>Kubernetes"]
+
+    M0 --> M1
+    M1 --> M2
+    M2 --> M3
+    M3 --> M4
+    M4 --> M5
+    M5 --> M6
+    M6 --> M7
+
 ```
 
 ---
